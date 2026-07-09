@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Player2Script : MonoBehaviour
 {
-    private int PlayerID = 2;
+    int PlayerID = 2;
     private Rigidbody rb;
-
+    private PoworBar po;
+    private ArrowScript ar;
     //飛ばす強さ
     public float charge;
     private float strength = 0;
@@ -17,11 +18,13 @@ public class Player2Script : MonoBehaviour
         Application.targetFrameRate = 60;
         //物理コンポーネントの取得
         rb = GetComponent<Rigidbody>();
+        po = GetComponent<PoworBar>();
+        ar = GetComponent<ArrowScript>();
     }
 
     void Update()
     {
-        
+
         //左スティック（または方向キー）で方向を定める
         float horizontal = Input.GetAxis("Horizontal" + PlayerID);
         float vertical = Input.GetAxis("Vertical" + PlayerID);
@@ -43,13 +46,19 @@ public class Player2Script : MonoBehaviour
                 MovePowor();
             }
         }
+        else
+        {
+            charge = 0;
+        }
 
+        po.powor = charge;
     }
 
     void MovePowor()
     {
         if (moveDirection != Vector3.zero && rb.linearVelocity.magnitude < 1f)
         {
+            ar.MoveArrow();
             rb.AddForce(moveDirection * strength, ForceMode.Impulse);
         }
     }
