@@ -14,7 +14,7 @@ public class NextSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Attack1"))
         {
                 SceneManager.LoadScene(nextScene);
         }

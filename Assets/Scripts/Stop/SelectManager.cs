@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal");
+        float h = Input.GetAxisRaw("Horizontal1");
 
         if (!stick)
         {
@@ -44,7 +44,7 @@ public class MenuManager : MonoBehaviour
         if (Mathf.Abs(h) < 0.2f)
             stick = false;
 
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Attack1"))
         {
             SceneManager.LoadScene(sceneNames[index]);
         }

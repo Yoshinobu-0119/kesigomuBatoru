@@ -36,7 +36,7 @@ public class StopManager : MonoBehaviour
         if (!isPause)
             return;
 
-        float h = Input.GetAxisRaw("Horizontal");
+        float h = Input.GetAxisRaw("Horizontal1");
 
         if (!stick)
         {
@@ -57,7 +57,7 @@ public class StopManager : MonoBehaviour
         if (Mathf.Abs(h) < 0.2f)
             stick = false;
 
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Attack1"))
         {
             if (index == 0)
                 ResumeGame();

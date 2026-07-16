@@ -934,7 +934,7 @@ MonoBehaviour:
   - {fileID: 1542909674}
   - {fileID: 1788077314}
   sceneNames:
-  - PlayerSample
+  - ScoreTestScene
   - Stage2
   - Stage3
 --- !u!1 &1211410341
