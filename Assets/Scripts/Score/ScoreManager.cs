@@ -11,10 +11,6 @@ public class ScoreManager : MonoBehaviour
     public int player1Score;
     public int player2Score;
 
-    public PlayerScript pl1;
-    public Player2Script pl2;
-
-
     //準備
     private void Awake()
     {   //自身をインスタンス登録
@@ -32,25 +28,11 @@ public class ScoreManager : MonoBehaviour
     {
         if (is1p)
         {
-            if (pl1.state == PlayerScript.PlayerState.ScoreUP)
-            {
-                player1Score += score * 2;
-            }
-            else
-            {
-                player1Score += score;
-            }
+            player1Score += score;
         }
         else
         {
-            if (pl2.state == Player2Script.PlayerState.ScoreUP)
-            {
-                player2Score += score * 2;
-            }
-            else
-            {
-                player2Score += score;
-            }
+            player2Score += score;
         }
     }
 

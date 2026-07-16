@@ -6,14 +6,14 @@ using System.Collections.Generic;
 
 public class PoworBar : MonoBehaviour
 {
-    public Image imgHP;     //窶氾屡弛ﾂー
-    public int maxHP;       //ﾂ催�窶佚･窶冤
+    public Image imgHP;     //緑バー
+    public int maxHP;       //最大値
 
     public float powor;         //HP
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        powor = 0;     //ﾂ鞘ｰﾅﾃｺ窶ｰﾂｻ
+        powor = 0;     //初期化
     }
 
     void Update()
