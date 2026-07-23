@@ -10,6 +10,7 @@ public class StopManager : MonoBehaviour
 
     public string titleScene;
 
+    TimerScript ts;
     //ƒQ[ƒ€‚Ìó‘Ô
     public enum GameState
     {
@@ -32,11 +33,13 @@ public class StopManager : MonoBehaviour
         //ƒQ[ƒ€‚Ìó‘Ô
         CurrentState = GameState.Opening;
 
+        ts = GameObject.FindFirstObjectByType<TimerScript>();
+
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause") && ts.canCountDown == true)
         {
             if (isPause)
                 ResumeGame();
@@ -122,6 +125,7 @@ public class StopManager : MonoBehaviour
     {
         //ƒQ[ƒ€‚Ìó‘Ô
         CurrentState = GameState.Gameplay;
+        Debug.Log("Start");
     }
 
     public void EndGame()
