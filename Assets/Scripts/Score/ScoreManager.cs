@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     public int player1Score;
     public int player2Score;
 
-    public PlayerScript pl1;
+    public Player1Script pl1;
     public Player2Script pl2;
 
 
@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (is1p)
         {
-            if (pl1.state == PlayerScript.PlayerState.ScoreUP)
+            if (pl1.state == Player1Script.PlayerState.ScoreUP)
             {
                 player1Score += score * 2;
             }
