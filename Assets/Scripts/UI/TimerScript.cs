@@ -67,7 +67,8 @@ public class TimerScript : MonoBehaviour
         centerText.text = "GO!";
 
         canCountDown = true;
-
+        StopManager stopM = GameObject.FindFirstObjectByType<StopManager>();
+        stopM.StartGame();
         yield return new WaitForSeconds(1);
         centerText.text = "";
     }
@@ -78,7 +79,9 @@ public class TimerScript : MonoBehaviour
         canCountDown = false;
         minutes = 0;
         seconds = 0;
-        centerText.text = "FINISH!y";
+        centerText.text = "FINISH!";
+        StopManager stopM = GameObject.FindFirstObjectByType<StopManager>();
+        stopM.EndGame();
         Debug.Log("カウントダウン停止。一度だけログが出力されていたらOK");
 
         //待った後に行う処理
