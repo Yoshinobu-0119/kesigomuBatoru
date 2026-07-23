@@ -10,7 +10,15 @@ public class StopManager : MonoBehaviour
 
     public string titleScene;
 
-
+    //ゲームの状態時
+    public enum GameState
+    {
+        Opening,    // 開始演出中
+        Gameplay,   // 通常プレイ中
+        Paused,     // ポーズ中
+        GameOver    // ゲーム終了（ゲームオーバー/クリア）
+    }
+    public static GameState CurrentState { get; private set; } = GameState.Gameplay;
 
     bool stick = false;
 
@@ -21,6 +29,9 @@ public class StopManager : MonoBehaviour
         Time.timeScale = 1f;
         isPause = false;
         PausePanel.SetActive(false);
+        //ゲームの状態
+        CurrentState = GameState.Gameplay;
+
     }
 
     void Update()
@@ -76,6 +87,10 @@ public class StopManager : MonoBehaviour
 
         PausePanel.SetActive(true);
 
+        //ゲームの状態
+        CurrentState = GameState.Paused;
+        Debug.Log("ポーズ中");
+
         index = 0;
         UpdateButton();
     }
@@ -85,6 +100,9 @@ public class StopManager : MonoBehaviour
         isPause = false;
         Time.timeScale = 1f;
         PausePanel.SetActive(false);
+
+        //ゲームの状態
+        CurrentState = GameState.Gameplay;
     }
     void UpdateButton()
     {

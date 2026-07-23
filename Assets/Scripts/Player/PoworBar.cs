@@ -18,6 +18,11 @@ public class PoworBar : MonoBehaviour
 
     void Update()
     {
+        if (StopManager.CurrentState != StopManager.GameState.Gameplay)
+        {
+            return;
+        }
+
         imgHP.fillAmount = (float)powor / maxHP;
     }
 
