@@ -30,7 +30,7 @@ public class StopManager : MonoBehaviour
         isPause = false;
         PausePanel.SetActive(false);
         //ƒQ[ƒ€‚Ìó‘Ô
-        CurrentState = GameState.Gameplay;
+        CurrentState = GameState.Opening;
 
     }
 
@@ -116,6 +116,18 @@ public class StopManager : MonoBehaviour
             resume.transform.localScale = Vector3.one;
             title.transform.localScale = Vector3.one * 1.15f;
         }
+    }
+
+    public void StartGame()
+    {
+        //ƒQ[ƒ€‚Ìó‘Ô
+        CurrentState = GameState.Gameplay;
+    }
+
+    public void EndGame()
+    {
+        //ƒQ[ƒ€‚Ìó‘Ô
+        CurrentState = GameState.GameOver;
     }
 
 }

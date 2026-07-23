@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Rendering;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
@@ -13,6 +14,7 @@ public class ScoreManager : MonoBehaviour
 
     public Player1Script pl1;
     public Player2Script pl2;
+
 
 
     //€”õ
