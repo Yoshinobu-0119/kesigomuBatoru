@@ -10,7 +10,16 @@ public class StopManager : MonoBehaviour
 
     public string titleScene;
 
-
+    TimerScript ts;
+    //ゲームの状態時
+    public enum GameState
+    {
+        Opening,    // 開始演出中
+        Gameplay,   // 通常プレイ中
+        Paused,     // ポーズ中
+        GameOver    // ゲーム終了（ゲームオーバー/クリア）
+    }
+    public static GameState CurrentState { get; private set; } = GameState.Gameplay;
 
     bool stick = false;
 
@@ -21,11 +30,16 @@ public class StopManager : MonoBehaviour
         Time.timeScale = 1f;
         isPause = false;
         PausePanel.SetActive(false);
+        //ゲームの状態
+        CurrentState = GameState.Opening;
+
+        ts = GameObject.FindFirstObjectByType<TimerScript>();
+
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause") && ts.canCountDown == true)
         {
             if (isPause)
                 ResumeGame();
@@ -76,6 +90,10 @@ public class StopManager : MonoBehaviour
 
         PausePanel.SetActive(true);
 
+        //ゲームの状態
+        CurrentState = GameState.Paused;
+        Debug.Log("ポーズ中");
+
         index = 0;
         UpdateButton();
     }
@@ -85,6 +103,9 @@ public class StopManager : MonoBehaviour
         isPause = false;
         Time.timeScale = 1f;
         PausePanel.SetActive(false);
+
+        //ゲームの状態
+        CurrentState = GameState.Gameplay;
     }
     void UpdateButton()
     {
@@ -98,6 +119,19 @@ public class StopManager : MonoBehaviour
             resume.transform.localScale = Vector3.one;
             title.transform.localScale = Vector3.one * 1.15f;
         }
+    }
+
+    public void StartGame()
+    {
+        //ゲームの状態
+        CurrentState = GameState.Gameplay;
+        Debug.Log("Start");
+    }
+
+    public void EndGame()
+    {
+        //ゲームの状態
+        CurrentState = GameState.GameOver;
     }
 
 }

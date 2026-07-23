@@ -5,12 +5,25 @@ public class ArrowScript : MonoBehaviour
 {
     public RectTransform arrowUI;
     public int ID;
+
+    public Rigidbody playerRigidbody;
     void Start()
     {
         if(arrowUI != null)arrowUI.gameObject.SetActive(false);
     }
     void Update()
     {
+        if (StopManager.CurrentState != StopManager.GameState.Gameplay)
+        {
+            return;
+        }
+
+        if (playerRigidbody != null && playerRigidbody.linearVelocity.magnitude > 1f)
+        {
+            arrowUI.gameObject.SetActive(false);
+            return;
+        }
+
         //スティックの入力を取得
         float moveHorizontal = Input.GetAxisRaw("Horizontal" + ID);
         float moveVertical = Input.GetAxisRaw("Vertical" + ID);

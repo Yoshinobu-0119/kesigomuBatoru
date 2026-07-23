@@ -7,6 +7,7 @@ public class Player2Script : MonoBehaviour
     private Rigidbody rb;
     private PoworBar po;
     private ArrowScript ar;
+
     //飛ばす強さ
     public float charge;
     private float strength = 0;
@@ -22,7 +23,9 @@ public class Player2Script : MonoBehaviour
     public enum PlayerState
     { 
         None,
-        ScoreUP
+        ScoreUP,
+        SpeedUP,
+        Debuff
     }
 
     public PlayerState state = PlayerState.None;
@@ -33,11 +36,14 @@ public class Player2Script : MonoBehaviour
         //物理コンポーネントの取得
         rb = GetComponent<Rigidbody>();
         po = GetComponent<PoworBar>();
-        ar = GetComponent<ArrowScript>();
     }
 
     void Update()
     {
+        if (StopManager.CurrentState != StopManager.GameState.Gameplay)
+        {
+            return;
+        }
 
         //左スティック（または方向キー）で方向を定める
         float horizontal = Input.GetAxis("Horizontal" + PlayerID);
@@ -78,8 +84,6 @@ public class Player2Script : MonoBehaviour
     {
         if (moveDirection != Vector3.zero && rb.linearVelocity.magnitude < 1f)
         {
-            ar.MoveArrow();
-
             // --- 【変更】speedMultiplier を掛け合わせて力を加える ---
             float finalStrength = strength * speedMultiplier;
             rb.AddForce(moveDirection * finalStrength, ForceMode.Impulse);
@@ -97,9 +101,12 @@ public class Player2Script : MonoBehaviour
 
     private IEnumerator SpeedBoostRoutine(float duration, float multiplier)
     {
+        state = PlayerState.SpeedUP;
         speedMultiplier = multiplier; // 速度を○倍にする
         yield return new WaitForSeconds(duration); // duration秒待つ
         speedMultiplier = 1f; // 元に戻す
+        state = PlayerState.None;
+        Debug.Log("2pスピード戻る");
     }
 
 
@@ -111,9 +118,12 @@ public class Player2Script : MonoBehaviour
 
     private IEnumerator ReverseControlsRoutine(float duration)
     {
+        state = PlayerState.Debuff;
         isReversed = true; // 反転フラグをON
         yield return new WaitForSeconds(duration); // duration秒待つ
         isReversed = false; // 元に戻す
+        state = PlayerState.None;
+        Debug.Log("2p反転戻る");
     }
 
     //スコアアップState状態にする
@@ -135,29 +145,36 @@ public class Player2Script : MonoBehaviour
     {
         if (other.CompareTag("ItemBox"))
         {
-            int randomValue = UnityEngine.Random.Range(0, 3); // 0, 1, 2 のいずれか
-
-            switch (randomValue)
+            if(state == PlayerState.None)
             {
-                case 0:
-                    // 自分を5秒間、吹っ飛び速度1.5倍にする
-                    Debug.Log("吹っ飛ばし力アップ");
-                    ActivateSpeedBoost(5f, 1.5f);
-                    break;
-                case 1:
-                    Debug.Log("相手反転");
-                    GameObject pl1 = GameObject.FindGameObjectWithTag("Player");
-                    PlayerScript state = pl1.GetComponent<PlayerScript>();
+                int randomValue = UnityEngine.Random.Range(0, 3); // 0, 1, 2 のいずれか
 
-                    if (state != null)
-                    {
-                         state.ActivateReverseControls(5.0f);
-                    }
-                    break;
-                case 2:
-                    Debug.Log("スコアアップ");
-                    ActivateState(8.0f);
-                    break;
+                switch (randomValue)
+                {
+                    case 0:
+                        // 自分を5秒間、吹っ飛び速度1.5倍にする
+                        Debug.Log("吹っ飛ばし力アップ");
+                        ActivateSpeedBoost(8f, 1.5f);
+                        break;
+                    case 1:
+                        Debug.Log("相手反転");
+                        GameObject pl1 = GameObject.FindGameObjectWithTag("Player");
+                        Player1Script state = pl1.GetComponent<Player1Script>();
+
+                        if (state != null)
+                        {
+                            state.ActivateReverseControls(5.0f);
+                        }
+                        break;
+                    case 2:
+                        Debug.Log("スコアアップ");
+                        ActivateState(8.0f);
+                        break;
+                }
+            }
+            else
+            {
+                Debug.Log("アイテム取得中");
             }
 
         }
