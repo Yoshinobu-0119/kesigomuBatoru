@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
+
+    public static string revengeStage;
+
     public Renderer[] buttons;
     public string[] sceneNames;
 
@@ -46,6 +49,7 @@ public class MenuManager : MonoBehaviour
 
         if (Input.GetButtonDown("Attack1"))
         {
+            MenuManager.revengeStage = sceneNames[index];
             SceneManager.LoadScene(sceneNames[index]);
         }
     }
