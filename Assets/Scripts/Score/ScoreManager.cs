@@ -19,6 +19,8 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {   //自身をインスタンス登録
         Instance = this;
+        TimerScript timer = GameObject.FindFirstObjectByType<TimerScript>();
+        timer.StartCoroutine(timer.GameStart());
     }
     private void Start()
     {   
