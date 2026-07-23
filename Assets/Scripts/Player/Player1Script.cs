@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Player1Script : MonoBehaviour
 {
+    //ƒvƒŒƒCƒ„[ID‚Æ‚©
     int PlayerID = 1;
     private Rigidbody rb;
     private PoworBar po;
