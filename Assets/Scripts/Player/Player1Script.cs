@@ -40,6 +40,10 @@ public class Player1Script : MonoBehaviour
 
     void Update()
     {
+        if (StopManager.CurrentState != StopManager.GameState.Gameplay)
+        {
+            return;
+        }
 
         //左スティック（または方向キー）で方向を定める
         float horizontal = Input.GetAxis("Horizontal" + PlayerID);
