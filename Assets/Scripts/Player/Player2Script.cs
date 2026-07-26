@@ -84,6 +84,7 @@ public class Player2Script : MonoBehaviour
     {
         if (moveDirection != Vector3.zero && rb.linearVelocity.magnitude < 1f)
         {
+            GetComponent<AudioSource>().Play();
             // --- 【変更】speedMultiplier を掛け合わせて力を加える ---
             float finalStrength = strength * speedMultiplier;
             rb.AddForce(moveDirection * finalStrength, ForceMode.Impulse);
