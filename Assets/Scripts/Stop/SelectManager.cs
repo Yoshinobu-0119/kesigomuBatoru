@@ -56,7 +56,7 @@ public class MenuManager : MonoBehaviour
 
     void UpdateButton()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (i == index)
             {
