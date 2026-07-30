@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 8129981789843900297}
   - component: {fileID: 8799824158305939949}
   - component: {fileID: 1168483332195102352}
+  - component: {fileID: 5283182453057135285}
   m_Layer: 0
   m_Name: ItemBox
   m_TagString: ItemBox
@@ -179,6 +180,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67148f5a6f86eea43b28a458f68b8de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5283182453057135285
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5803174496068170495}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36ba119faf3c3a74faf90c5cbe4af61b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3327143664190413265
 PrefabInstance:
   m_ObjectHideFlags: 0
