@@ -20,6 +20,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: cb446077aaedf504dbc170490b51a54f
+  - enabled: 1
+    path: Assets/Scenes/SelectStage/ShibuyaStage.unity
+    guid: fd564ce6e3c0eb442a7348dcabd3ae98
+  - enabled: 1
+    path: Assets/Scenes/SelectStage/ShiraishiStage.unity
+    guid: 9fb8eb4f08ad7f8499d101a1b16f3486
+  - enabled: 1
+    path: Assets/Scenes/SelectStage/TakahashiStage.unity
+    guid: c2f0b83a34bb2fd4ab3c795bdf546df5
+  - enabled: 1
+    path: Assets/Scenes/SelectStage/YuuStage.unity
+    guid: eef0af27da2972e4e9c25fbf26722d2e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

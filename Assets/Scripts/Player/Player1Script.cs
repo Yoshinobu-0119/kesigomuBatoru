@@ -85,6 +85,7 @@ public class Player1Script : MonoBehaviour
     {
         if (moveDirection != Vector3.zero && rb.linearVelocity.magnitude < 1f )
         {
+            GetComponent<AudioSource>().Play();
 
             // --- y•ÏXzspeedMultiplier ‚ğŠ|‚¯‡‚í‚¹‚Ä—Í‚ğ‰Á‚¦‚é ---
             float finalStrength = strength * speedMultiplier;
