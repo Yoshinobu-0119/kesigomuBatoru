@@ -5,6 +5,8 @@ public class AddScoreObject : MonoBehaviour
     ScoreManager scoreManager;
     Rigidbody rb;
 
+    [SerializeField] private GameObject hitParticle;
+
     [Header("自身がプレイヤーかどうか")]
     public bool isPlayer1p;
     public bool isPlayer2p;
@@ -85,6 +87,17 @@ public class AddScoreObject : MonoBehaviour
         //当たったオブジェクトにAddScoreObjectはある？
         if (collision.gameObject.GetComponent<AddScoreObject>())
         {
+            //パーティクル再生
+            if (hitParticle != null)
+            {
+                Vector3 hitPos = collision.GetContact(0).point;
+                hitPos.y += 0.75f;
+
+                GameObject particle = Instantiate(hitParticle, hitPos,hitParticle.transform.rotation);
+                Destroy(particle, 3f);
+            }
+
+
             //相手のAddScoreObject
             AddScoreObject other = collision.gameObject.GetComponent<AddScoreObject>();
 
