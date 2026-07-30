@@ -14,16 +14,6 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private GameObject cameraObj;
     public static GameManagerScript instance { get; private set; }
     //--------------------------------------------------------------
-    [Header("StageSelect")]
-    public static string revengeStage;
-
-    public Renderer[] buttons;
-    public string[] sceneNames;
-
-    int index = 0;
-    bool stick = false;
-
-    //--------------------------------------------------------------
     public enum GameState
     {
         TitleScreen,
@@ -51,57 +41,13 @@ public class GameManagerScript : MonoBehaviour
 
     void Start()
     {
-        UpdateButton();
+        anim.Play("noTransitiom");
     }
 
     //--------------------------------------------------------------
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal1");
-
-        if (Input.GetButtonDown("Attack1") && gameState == GameState.TitleScreen)
-        {
-            StartCoroutine(titleScreenToStageSelectScreen());
-        }
-
-        //--------------------------------------------------------------
-        //Stage Select
-        if (gameState == GameState.StageSelectionScreen)
-        {
-            if (!stick)
-            {
-                if (h > 0.5f)
-                {
-                    index++;
-
-                    if (index >= buttons.Length)
-                        index = 0;
-
-                    UpdateButton();
-                    stick = true;
-                }
-                else if (h < -0.5f)
-                {
-                    index--;
-
-                    if (index < 0)
-                        index = buttons.Length - 1;
-
-                    UpdateButton();
-                    stick = true;
-                }
-            }
-
-            if (Mathf.Abs(h) < 0.2f)
-                stick = false;
-
-            if (Input.GetButtonDown("Attack1"))
-            {
-                StartCoroutine(stageSelectScreenToMainGame());
-            }
-        }
-
         //--------------------------------------------------------------
         //Important
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -111,25 +57,6 @@ public class GameManagerScript : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-
-    //--------------------------------------------------------------
-
-    void UpdateButton()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            if (i == index)
-            {
-                buttons[i].material.EnableKeyword("_EMISSION");
-                buttons[i].material.SetColor("_EmissionColor", Color.yellow * 5f);
-            }
-            else
-            {
-                buttons[i].material.SetColor("_EmissionColor", Color.black);
-            }
-        }
-    }
-
     //--------------------------------------------------------------
 
     IEnumerator fadeInTransition()
@@ -148,16 +75,6 @@ public class GameManagerScript : MonoBehaviour
     {
         gameState = GameState.StageSelectionScreen;
         yield return new WaitForSeconds(screenTransitionTimer);
-    }
-
-    IEnumerator stageSelectScreenToMainGame()
-    {
-        MenuManager.revengeStage = sceneNames[index];
-        StartCoroutine(fadeInTransition());
-        yield return new WaitForSeconds(screenTransitionTimer);
-        gameState = GameState.MainGame;
-        SceneManager.LoadScene(sceneNames[index]);
-        StartCoroutine(fadeOutTransition());
     }
     //---------------------------------
     IEnumerator ResultScreenToSelectStage()
