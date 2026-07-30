@@ -37,6 +37,7 @@ public class GameManagerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         /*if(instance != null)
         {
             Destroy(gameObject);

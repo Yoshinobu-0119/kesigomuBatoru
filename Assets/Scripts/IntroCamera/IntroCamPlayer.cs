@@ -68,7 +68,13 @@ public class IntroCamPlayer : MonoBehaviour
     {
         if (index >= camList.Length - 1) return;
 
-        timer += Time.deltaTime;
+        if (Input.GetButtonDown("Attack1") || Input.GetButtonDown("Attack2"))
+        {
+            fade.FadeOut(endFadeTime, fadeEase);
+            StartCoroutine(LoadScene(nextSceneName, changeSceneTimer));
+        }
+
+            timer += Time.deltaTime;
 
         CameraPos from = camList[index];
         CameraPos to = camList[index + 1];
