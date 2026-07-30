@@ -3273,10 +3273,10 @@ MonoBehaviour:
   - {fileID: 1684089998}
   sceneNames:
   - ScoreTestScene
-  - ShibuyaStage
+  - IntroShibuyaStage
   - ShiraishiStage
-  - TakahashiStage
-  - YuuStage
+  - IntroTakahashiStage
+  - IntroYuuStage
 --- !u!4 &260959236
 Transform:
   m_ObjectHideFlags: 0
