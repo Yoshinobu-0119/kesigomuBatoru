@@ -3129,7 +3129,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236727698}
   serializedVersion: 4
-  m_Mass: 3
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -4475,7 +4475,7 @@ MonoBehaviour:
   defaultRot: {x: 0, y: 0, z: 0, w: 0}
   randomRangeMin: {x: 0, y: 0, z: 0}
   randomRangeMax: {x: 0, y: 0, z: 0}
-  itemScore: 2
+  itemScore: 3
   is1p: 0
 --- !u!4 &393740699 stripped
 Transform:
@@ -4854,7 +4854,7 @@ MonoBehaviour:
   defaultRot: {x: 0, y: 0, z: 0, w: 0}
   randomRangeMin: {x: 0, y: 0, z: 0}
   randomRangeMax: {x: 0, y: 0, z: 0}
-  itemScore: 3
+  itemScore: 5
   is1p: 0
 --- !u!114 &457089888
 MonoBehaviour:
@@ -5786,7 +5786,7 @@ MonoBehaviour:
   defaultRot: {x: 0, y: 0, z: 0, w: 0}
   randomRangeMin: {x: 0, y: 0, z: 0}
   randomRangeMax: {x: 0, y: 0, z: 0}
-  itemScore: 2
+  itemScore: 4
   is1p: 0
 --- !u!4 &587621759 stripped
 Transform:
@@ -5851,7 +5851,7 @@ MonoBehaviour:
   defaultRot: {x: 0, y: 0, z: 0, w: 0}
   randomRangeMin: {x: 0, y: 0, z: 0}
   randomRangeMax: {x: 0, y: 0, z: 0}
-  itemScore: 2
+  itemScore: 3
   is1p: 0
 --- !u!4 &590552971 stripped
 Transform:
@@ -13346,7 +13346,7 @@ MonoBehaviour:
   defaultRot: {x: 0, y: 0, z: 0, w: 0}
   randomRangeMin: {x: 0, y: 0, z: 0}
   randomRangeMax: {x: 0, y: 0, z: 0}
-  itemScore: 2
+  itemScore: 4
   is1p: 0
 --- !u!1 &1275379279
 GameObject:
@@ -13548,7 +13548,7 @@ MonoBehaviour:
   defaultRot: {x: 0, y: 0, z: 0, w: 0}
   randomRangeMin: {x: 0, y: 0, z: 0}
   randomRangeMax: {x: 0, y: 0, z: 0}
-  itemScore: 3
+  itemScore: 5
   is1p: 0
 --- !u!114 &1296900089
 MonoBehaviour:
@@ -13986,7 +13986,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.596
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
