@@ -4845,7 +4845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitParticle: {fileID: 0}
+  hitParticle: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
   isPlayer1p: 1
   isPlayer2p: 0
   canRespawn: 1
@@ -7626,11 +7626,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: acdfaf7f0ec3e6c448918d0e6603e34f, type: 3}
   m_PrefabInstance: {fileID: 1132130340}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &751998212 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5053177858904903066, guid: d36cdd0e63d54bc4588cf3d77facb71c, type: 3}
-  m_PrefabInstance: {fileID: 1611084275}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &755828540
 PrefabInstance:
@@ -11544,6 +11539,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6657deb21ab1eb84eab4143f6c143a56, type: 3}
+--- !u!1 &1116748061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5053177858904903066, guid: d36cdd0e63d54bc4588cf3d77facb71c, type: 3}
+  m_PrefabInstance: {fileID: 1611084275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1117037584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12544,7 +12544,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7918c81932f181b42865f9e12c1b608a, type: 3}
     - target: {fileID: 3158201963790250508, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: minutes
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3158201963790250508, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: seconds
@@ -13539,7 +13539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitParticle: {fileID: 0}
+  hitParticle: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
   isPlayer1p: 0
   isPlayer2p: 1
   canRespawn: 1
@@ -13977,16 +13977,16 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751998212}
+  m_GameObject: {fileID: 1116748061}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 113d75c4c6ec7d243b50a4b017ca99c2, type: 3}
-  m_Resource: {fileID: 8300000, guid: 113d75c4c6ec7d243b50a4b017ca99c2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d91c63361a3244a42857956131dfa586, type: 3}
+  m_Resource: {fileID: 8300000, guid: d91c63361a3244a42857956131dfa586, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.495
+  m_Volume: 0.596
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
