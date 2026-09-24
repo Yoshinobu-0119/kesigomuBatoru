@@ -4358,7 +4358,7 @@ GameObject:
   - component: {fileID: 405932687}
   - component: {fileID: 405932686}
   m_Layer: 0
-  m_Name: CamPoint
+  m_Name: CamPoint_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9419,7 +9419,7 @@ GameObject:
   - component: {fileID: 969221198}
   - component: {fileID: 969221197}
   m_Layer: 0
-  m_Name: CamPoint
+  m_Name: CamPoint_000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9729,7 +9729,7 @@ GameObject:
   - component: {fileID: 980389214}
   - component: {fileID: 980389213}
   m_Layer: 0
-  m_Name: CamPoint
+  m_Name: CamPoint_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15763,7 +15763,7 @@ GameObject:
   - component: {fileID: 1592883556}
   - component: {fileID: 1592883555}
   m_Layer: 0
-  m_Name: CamPoint
+  m_Name: CamPoint_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17264,7 +17264,7 @@ GameObject:
   - component: {fileID: 1773686161}
   - component: {fileID: 1773686160}
   m_Layer: 0
-  m_Name: CamPoint
+  m_Name: CamPoint_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19447,7 +19447,7 @@ GameObject:
   - component: {fileID: 2106301374}
   - component: {fileID: 2106301373}
   m_Layer: 0
-  m_Name: CamPoint
+  m_Name: CamPoint_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
