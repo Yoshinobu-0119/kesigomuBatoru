@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Final Build Scene/MainClassroom.unity
+    guid: cb4179fb326cf6f47b1352d336053b91
+  - enabled: 0
     path: Assets/Scenes/TITLE.unity
     guid: 09026738dbf910745a06abc4046366ac
   - enabled: 1
@@ -29,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectStage/Intro/IntroYuuStage.unity
     guid: 2c006caa4c30f72409a32f5bab070a4e
+  - enabled: 1
+    path: Assets/Scenes/SelectStage/Intro/IntroShiraishiStage.unity
+    guid: d8b3889cb4a444748a5f706da98793cc
   - enabled: 1
     path: Assets/Scenes/SelectStage/Intro/IntroTakahashiStage2.unity
     guid: de6227286780ac944a64c868e3cfc0ab
