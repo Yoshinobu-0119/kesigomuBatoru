@@ -9283,11 +9283,11 @@ MonoBehaviour:
   - {fileID: 450681561}
   - {fileID: 346416969}
   sceneNames:
-  - ScoreTestScene
-  - ShibuyaStage
-  - ShiraishiStage
-  - TakahashiStage
-  - YuuStage
+  - IntroTakahashiStage2
+  - IntroShibuyaStage
+  - IntroShiraishiStage
+  - IntroTakahashiStage
+  - IntroYuuStage
 --- !u!1001 &873498003
 PrefabInstance:
   m_ObjectHideFlags: 0
