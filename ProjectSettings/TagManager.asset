@@ -10,11 +10,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - OutlineLayerP2
   - Water
   - UI
-  - 
-  - 
+  - OutlineLayerP1
+  - OutlineLayerDefault
   - 
   - 
   - 

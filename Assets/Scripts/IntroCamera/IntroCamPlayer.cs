@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 [System.Serializable]
 public class CameraPos
@@ -48,8 +49,12 @@ public class IntroCamPlayer : MonoBehaviour
     void LoadFromScene()
     {
         var points = FindObjectsOfType<CameraPointMarker>()
-            .OrderBy(p => p.transform.GetSiblingIndex()) // Hierarchy‡
-            .ToArray();
+        .OrderBy(p =>
+        {
+            Match match = Regex.Match(p.name, @"\d+");
+            return match.Success ? int.Parse(match.Value) : int.MaxValue;
+        })
+        .ToArray();
 
         //Array‚É‚»‚ê‚¼‚ê‚ÌCameraPoint‚ð’Ç‰Á
         camList = points.Select(p => new CameraPos()

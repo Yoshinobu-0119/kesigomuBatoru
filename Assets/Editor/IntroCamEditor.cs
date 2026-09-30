@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 public class IntroCamEditor : EditorWindow
 {
@@ -11,14 +13,32 @@ public class IntroCamEditor : EditorWindow
 
         Camera sceneCam = view.camera;
 
-        GameObject point = new GameObject("CamPoint");
+        // 既存の最大番号を取得
+        int nextIndex = 0;
+
+        var points = Object.FindObjectsOfType<CameraPointMarker>();
+
+        foreach (var p in points)
+        {
+            Match match = Regex.Match(p.name, @"\d+");
+
+            if (match.Success)
+            {
+                int number = int.Parse(match.Value);
+                nextIndex = Mathf.Max(nextIndex, number + 1);
+            }
+        }
+
+        GameObject point = new GameObject($"CamPoint_{nextIndex:D3}");
+
         point.transform.position = sceneCam.transform.position;
         point.transform.rotation = sceneCam.transform.rotation;
 
-        // moveTimer を保持するためのコンポーネント
         var cp = point.AddComponent<CameraPointMarker>();
         cp.moveTime = 0.5f;
 
         Selection.activeGameObject = point;
+
+        Undo.RegisterCreatedObjectUndo(point, "Create Camera Point");
     }
 }
