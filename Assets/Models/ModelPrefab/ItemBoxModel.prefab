@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -2797466374065322248, guid: e762e2de01fb6334683624fbd1f16fb8, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1600542680823235302, guid: e762e2de01fb6334683624fbd1f16fb8, type: 3}
       propertyPath: m_Layer
       value: 7
