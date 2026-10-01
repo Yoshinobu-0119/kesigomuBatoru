@@ -271,19 +271,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorCamera: {fileID: 301706498}
   placeables:
-  - displayName: Table
+  - prefabId: 
+    displayName: Table
     prefab: {fileID: 843833365799734766, guid: 51d8d252f40c75c4c989012f510ce37d, type: 3}
     placeType: 0
-  - displayName: Ruler
+  - prefabId: 
+    displayName: Ruler
     prefab: {fileID: 3658945884392529984, guid: 344f256e333c98949b091119109ead03, type: 3}
     placeType: 1
   useGrid: 1
   gridSize: 2
   moveSpeed: 10
   rotateStep: 5
-  minBounds: {x: -10, y: -10}
-  maxBounds: {x: 10, y: 10}
+  minBounds: {x: -45, y: -25}
+  maxBounds: {x: 25, y: 0}
   useRigidBody: 1
+  scoreInput: {fileID: 0}
+  respawnToggle: {fileID: 0}
+  stageNameInput: {fileID: 0}
 --- !u!1 &498416427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1023,7 @@ Transform:
   m_GameObject: {fileID: 1198996692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.36, y: 47.53423, z: -25.762339}
+  m_LocalPosition: {x: -22.5, y: -20.61, z: -25.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
