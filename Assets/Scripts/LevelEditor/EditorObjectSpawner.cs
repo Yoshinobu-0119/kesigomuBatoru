@@ -316,8 +316,13 @@ public class EditorObjectSpawner : MonoBehaviour
         editorObject.placeType =
             placeables[selectedIndex].placeType;
 
-        editorObject.SetRigidBodyEnabled(useRigidBody);
+        editorObject.placeType =
+            placeables[selectedIndex].placeType; // 既存のコード
 
+        // 以下の1行を追加してprefabIdを記録する
+        editorObject.prefabId = placeables[selectedIndex].prefabId;
+
+        editorObject.SetRigidBodyEnabled(useRigidBody); // 既存のコード
     }
 
     #endregion
