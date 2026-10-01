@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
         UpdateScore();
     }
 
-    public void AddScore(bool is1p, int score)
+    public void AddScore(bool is1p, bool is2p, int score)
     {
         if (is1p)
         {
@@ -45,7 +45,7 @@ public class ScoreManager : MonoBehaviour
                 player1Score += score;
             }
         }
-        else
+        if (is2p)
         {
             if (pl2.state == Player2Script.PlayerState.ScoreUP)
             {

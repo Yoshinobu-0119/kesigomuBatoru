@@ -20,6 +20,16 @@ public class TimerScript : MonoBehaviour
 
     private float timer;
 
+    public GameObject resultPanel;
+    private void Awake()
+    {
+        resultPanel = GameObject.Find("ResultPanel");
+    }
+    private void Start()
+    {
+        resultPanel.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -86,6 +96,6 @@ public class TimerScript : MonoBehaviour
 
         //ë“Ç¡ÇΩå„Ç…çsÇ§èàóù
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("TITLE");
+        resultPanel.SetActive(true);
     }
 }
