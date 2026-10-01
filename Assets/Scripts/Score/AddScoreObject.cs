@@ -12,7 +12,7 @@ public class AddScoreObject : MonoBehaviour
     public bool isPlayer2p;
 
     [Header("復活設定")]
-    [SerializeField] bool canRespawn;
+    public bool canRespawn;
     [SerializeField] bool isRandom;
     [SerializeField] Vector3 defaultPos;
     [SerializeField] Quaternion defaultRot;
@@ -23,6 +23,7 @@ public class AddScoreObject : MonoBehaviour
     [Header("スコア")]
     public int itemScore;
     [SerializeField] bool is1p;
+    [SerializeField] bool is2p;
 
     private void Start()
     {
@@ -41,6 +42,12 @@ public class AddScoreObject : MonoBehaviour
 
     void Respawn()
     {
+        //プレイヤーじゃない場合
+        if (isPlayer1p == false &&isPlayer2p == false)
+        {
+            is1p = false;
+            is2p = false;
+        }
         //回転
         transform.rotation = defaultRot;
         //位置
@@ -54,7 +61,6 @@ public class AddScoreObject : MonoBehaviour
         {
             transform.position = defaultPos;
         }
-
         //Rigidbodyがあるなら動きを停止
         if (rb != null)
         {
@@ -68,11 +74,19 @@ public class AddScoreObject : MonoBehaviour
     {
         if (other.gameObject.name == "void")
         {
-            if (this.isPlayer1p) is1p = false;
+            if (this.isPlayer1p)
+            {
+                is1p = false;
+                is2p = true;
+            }
 
-            if (this.isPlayer2p) is1p = true;
+            if (this.isPlayer2p)
+            {
+                is1p = true;
+                is2p = false;
+            }
 
-            scoreManager.AddScore(is1p, itemScore);
+            scoreManager.AddScore(is1p, is2p, itemScore);
 
             if (canRespawn)
             {
@@ -104,9 +118,17 @@ public class AddScoreObject : MonoBehaviour
             //相手がプレイヤーじゃない場合
             if (other.isPlayer1p == false && other.isPlayer2p == false)
             {
-                if (this.isPlayer1p) other.is1p = true;
+                if (this.isPlayer1p)
+                {
+                    other.is1p = true;
+                    other.is2p = false;
+                }
 
-                if (this.isPlayer2p) other.is1p = false;
+                if (this.isPlayer2p)
+                {
+                    other.is2p = true;
+                    other.is1p = false;
+                }
             }
         }
     }
