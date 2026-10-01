@@ -80,6 +80,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5363424281805771908, guid: f41ca2ad3477ca247a6d1b43a58c94b1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1858088320818141857, guid: f41ca2ad3477ca247a6d1b43a58c94b1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f41ca2ad3477ca247a6d1b43a58c94b1, type: 3}
       propertyPath: m_Name
       value: light
