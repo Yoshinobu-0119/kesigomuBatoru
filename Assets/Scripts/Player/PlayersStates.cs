@@ -23,6 +23,7 @@ public class PlayersStates : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //1pの状態（state）を取得し、imageに状態にあったイラストを表示する
         switch (pl1.state)
         {
             case Player1Script.PlayerState.None:
@@ -35,6 +36,7 @@ public class PlayersStates : MonoBehaviour
                 status1p.sprite = img[3]; break;
         }
 
+        //2pの状態（state）を取得し、imageに状態にあったイラストを表示する
         switch (pl2.state)
         {
             case Player2Script.PlayerState.None:
