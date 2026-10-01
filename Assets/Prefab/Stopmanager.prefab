@@ -47,4 +47,4 @@ MonoBehaviour:
   PausePanel: {fileID: 0}
   resume: {fileID: 0}
   title: {fileID: 0}
-  titleScene: TITLE
+  titleScene: MainClassroom
