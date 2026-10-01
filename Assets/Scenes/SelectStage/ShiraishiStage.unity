@@ -274,6 +274,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &53557112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -778,6 +779,116 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6822023527781304244, guid: 25a3fe68f4db37e40a68dbc5d1f6a1c0, type: 3}
   m_PrefabInstance: {fileID: 201410359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &208614333
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1303378458}
+    m_Modifications:
+    - target: {fileID: 710647813513675193, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_Name
+      value: StatusUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: pl1
+      value: 
+      objectReference: {fileID: 1900685636}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: pl2
+      value: 
+      objectReference: {fileID: 1037819056}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+--- !u!224 &208614334 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+  m_PrefabInstance: {fileID: 208614333}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &211210577
 PrefabInstance:
@@ -1337,6 +1448,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 2
   is1p: 0
+  is2p: 0
 --- !u!1 &327987289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ff76c29d5ca0b6a48b19761434a1d153, type: 3}
@@ -1397,6 +1509,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &327987295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1696,6 +1809,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &366389350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2593,6 +2707,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &534156885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2909,6 +3024,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &610427724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4159,6 +4275,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &842500235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4827,6 +4944,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &987948203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4908,6 +5026,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1010226309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5380,6 +5499,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!114 &1037819058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5994,6 +6114,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1135193517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6075,6 +6196,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1153077997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6343,6 +6465,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1177228967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6543,6 +6666,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1189270267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6805,6 +6929,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 2
   is1p: 0
+  is2p: 0
 --- !u!1 &1248197410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 157290819312208630, guid: c3c16fe9248ac9c46ab8f5db3632d16a, type: 3}
@@ -7282,6 +7407,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1298243694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7400,7 +7526,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6263580332856247827, guid: 1875dd7f4ef5573469804f39344e89d8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 831544674}
+      addedObject: {fileID: 208614334}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1875dd7f4ef5573469804f39344e89d8, type: 3}
 --- !u!224 &1303378458 stripped
@@ -7551,6 +7677,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1336732148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8055,6 +8182,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1472497071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8675,6 +8803,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1664015617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8756,6 +8885,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1667754147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8837,6 +8967,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1713251250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9674,6 +9805,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1835307442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10166,6 +10298,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!114 &1900685634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10508,6 +10641,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &1933767318
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11125,6 +11259,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!65 &2049868862
 BoxCollider:
   m_ObjectHideFlags: 0
