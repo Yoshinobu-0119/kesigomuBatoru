@@ -386,42 +386,15 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &296938200
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8183524440625045276, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
+  m_PrefabInstance: {fileID: 724761968}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296938198}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb1604a89a0d4204287d6c3d4e6bddfd, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 1
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &296938201
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296938198}
-  m_CullTransparentMesh: 1
 --- !u!1001 &316244911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -984,6 +957,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1076361915919826413, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1296900086}
     - target: {fileID: 5233071786343696528, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
       propertyPath: m_Name
       value: P2arrow
@@ -1020,13 +997,7 @@ PrefabInstance:
     - {fileID: 3311818709541145819, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
     - {fileID: 226387508949209708, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 520736752452535112, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 937919568}
-    - targetCorrespondingSourceObject: {fileID: 216215950508188518, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1307206304}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5233071786343696528, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
       insertIndex: -1

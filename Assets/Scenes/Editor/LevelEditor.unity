@@ -864,11 +864,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorCamera: {fileID: 301706498}
   placeables:
-  - prefabId: 
+  - prefabId: 0
     displayName: Table
     prefab: {fileID: 843833365799734766, guid: 51d8d252f40c75c4c989012f510ce37d, type: 3}
     placeType: 0
-  - prefabId: 
+  - prefabId: 1
     displayName: Ruler
     prefab: {fileID: 3658945884392529984, guid: 344f256e333c98949b091119109ead03, type: 3}
     placeType: 1
@@ -4125,7 +4125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1941863189
 MonoBehaviour:
   m_ObjectHideFlags: 0

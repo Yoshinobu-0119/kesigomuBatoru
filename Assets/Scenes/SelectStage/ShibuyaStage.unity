@@ -4544,7 +4544,7 @@ PrefabInstance:
     - target: {fileID: 4551396120215538253, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: imgHP
       value: 
-      objectReference: {fileID: 861579840}
+      objectReference: {fileID: 486148055}
     - target: {fileID: 7324468613422016877, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: m_Name
       value: P1eraser
@@ -4552,7 +4552,7 @@ PrefabInstance:
     - target: {fileID: 7949440238923057604, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: arrowUI
       value: 
-      objectReference: {fileID: 937919568}
+      objectReference: {fileID: 1216022082}
     - target: {fileID: 7993447099577676759, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42541912
@@ -4621,7 +4621,7 @@ PrefabInstance:
     - target: {fileID: 4699793965038968237, guid: f1619f8823040354ba19fca7eb0cb341, type: 3}
       propertyPath: imgHP
       value: 
-      objectReference: {fileID: 1307206305}
+      objectReference: {fileID: 1674160259}
     - target: {fileID: 7242083824247122532, guid: f1619f8823040354ba19fca7eb0cb341, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42541885
