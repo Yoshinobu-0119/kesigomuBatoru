@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3266873162024327592}
   - component: {fileID: 9003827581774858718}
   - component: {fileID: 1893733166258439354}
+  - component: {fileID: 2327364519758059929}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -124,6 +125,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundPoint: {fileID: 2125613781626730447}
+--- !u!114 &2327364519758059929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843833365799734766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109560b5ebccd23438a6b3dbd3b48526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceptedTypes: 01000000
 --- !u!1 &7759972974679183890
 GameObject:
   m_ObjectHideFlags: 0

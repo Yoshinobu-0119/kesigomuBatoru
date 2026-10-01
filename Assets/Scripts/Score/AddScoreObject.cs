@@ -12,7 +12,7 @@ public class AddScoreObject : MonoBehaviour
     public bool isPlayer2p;
 
     [Header("•œŠˆİ’è")]
-    [SerializeField] bool canRespawn;
+    public bool canRespawn;
     [SerializeField] bool isRandom;
     [SerializeField] Vector3 defaultPos;
     [SerializeField] Quaternion defaultRot;
