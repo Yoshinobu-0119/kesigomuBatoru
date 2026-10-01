@@ -5,9 +5,14 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public GameObject itemPrefab;
+    public GameObject itemSpawnIndicator;
 
     public float spawntime;
 
+    private void Awake()
+    {
+        itemSpawnIndicator.SetActive(false);
+    }
     void Start()
     {
         // ƒQ[ƒ€ŠJn‚ÉÅ‰‚Ì1ŒÂ‚ğ¶¬
