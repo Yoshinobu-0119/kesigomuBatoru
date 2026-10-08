@@ -53,7 +53,7 @@ public class ScoreReceiver : MonoBehaviour
 
     private void Update()
     {
-        if (canRestart && Input.GetButtonDown("Attack1") || Input.GetButtonDown("Attack2"))
+        if (canRestart && (Input.GetButtonDown("Attack1") || Input.GetButtonDown("Attack2")))
         {
             CanvasResult.SetActive(true);
         }
@@ -64,7 +64,7 @@ public class ScoreReceiver : MonoBehaviour
         if (ScoreManager.Instance == null) score1p = 100;
         if (ScoreManager.Instance == null) score2p = 100;
         if (ScoreManager.Instance == null) scoreTotal = 200;
-        if (ScoreManager.Instance == null) return;
+
             score1p = ScoreManager.Instance.player1Score;
             score2p = ScoreManager.Instance.player2Score;
         scoreTotal = score1p + score2p;
