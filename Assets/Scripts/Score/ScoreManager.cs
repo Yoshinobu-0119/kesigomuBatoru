@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
     {   //自身をインスタンス登録
         Instance = this;
         TimerScript timer = GameObject.FindFirstObjectByType<TimerScript>();
-        timer.StartCoroutine(timer.GameStart());
+        //timer.StartCoroutine(timer.GameStart());
     }
     private void Start()
     {   
@@ -65,11 +65,11 @@ public class ScoreManager : MonoBehaviour
     {
         if (player1ScoreText != null)
         {
-            player1ScoreText.text = player1Score.ToString();
+            player1ScoreText.text = player1Score.ToString("000");
         }
         if (player2ScoreText != null)
         {
-            player2ScoreText.text = player2Score.ToString();
+            player2ScoreText.text = player2Score.ToString("000");
         }
     }
 
