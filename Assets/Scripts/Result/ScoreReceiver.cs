@@ -1,19 +1,24 @@
 using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.UI;
 public class ScoreReceiver : MonoBehaviour
 {
+    [SerializeField] Animator animator;
+    [SerializeField] ParticleSystem particle;
+    [SerializeField] FadeController fadeController;
     [SerializeField] private int score1p;
     [SerializeField] private int score2p;
     private int scoreTotal;
+    bool canRestart;
 
     [Header("UI")]
     [SerializeField] private Image bar1p;
     [SerializeField] private Image bar2p;
     [SerializeField] private TextMeshProUGUI counter1p;
     [SerializeField] private TextMeshProUGUI counter2p;
+    [SerializeField] private GameObject CanvasResult;
 
     [Header("Animation Settings")]
     [Tooltip("最初のダミー伸びの目標割合（0.1 = 10%）")]
@@ -30,6 +35,9 @@ public class ScoreReceiver : MonoBehaviour
 
     private void Start()
     {
+        CanvasResult.SetActive(false);
+        canRestart = false;
+        fadeController.FadeIn(0.5f, EaseType.Linear);
         // 1. スコアデータの取得
         FetchScore();
 
@@ -43,8 +51,20 @@ public class ScoreReceiver : MonoBehaviour
         StartCoroutine(AnimateScoreRoutine());
     }
 
+    private void Update()
+    {
+        if (canRestart && Input.GetButtonDown("Attack1") || Input.GetButtonDown("Attack2"))
+        {
+            CanvasResult.SetActive(true);
+        }
+    }
+
     private void FetchScore()
     {
+        if (ScoreManager.Instance == null) score1p = 100;
+        if (ScoreManager.Instance == null) score2p = 100;
+        if (ScoreManager.Instance == null) scoreTotal = 200;
+        if (ScoreManager.Instance == null) return;
             score1p = ScoreManager.Instance.player1Score;
             score2p = ScoreManager.Instance.player2Score;
         scoreTotal = score1p + score2p;
@@ -54,7 +74,7 @@ public class ScoreReceiver : MonoBehaviour
     {
         // 念のためアニメーション開始時にも最新値を取り直す
         FetchScore();
-
+        yield return new WaitForSeconds(waitTime);
         // --------------------------------------------------
         // フェーズ1: 最初にバーを両方0.1程度まで勢いよく伸ばす
         // --------------------------------------------------
@@ -68,7 +88,7 @@ public class ScoreReceiver : MonoBehaviour
             elapsed += Time.deltaTime;
 
             float rawT = Mathf.Clamp01(elapsed / initialDuration);
-            float t = Ease.OutCubic(rawT);
+            float t = Ease.OutQuart(rawT);
 
             float currentFill = Mathf.Lerp(0f, initialFillAmount, t);
             if (bar1p != null) bar1p.fillAmount = currentFill;
@@ -122,5 +142,15 @@ public class ScoreReceiver : MonoBehaviour
         if (bar2p != null) bar2p.fillAmount = targetFill2p;
         if (counter1p != null) counter1p.text = score1p.ToString();
         if (counter2p != null) counter2p.text = score2p.ToString();
+
+        PlayAnimTrigger("StartAnim");
+        yield return new WaitForSeconds(1f);
+        particle.Play();
+        canRestart = true;
+    }
+
+    public void PlayAnimTrigger(string AnimName)
+    {
+        animator.SetTrigger(AnimName);
     }
 }
