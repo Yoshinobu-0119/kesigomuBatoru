@@ -18,8 +18,6 @@ public class PlayersStates : MonoBehaviour
     private Animator anim;
     private float animDuration;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     void Start()
     {
         status1p.sprite = img[0];
@@ -71,7 +69,7 @@ public class PlayersStates : MonoBehaviour
         AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
 
         yield return new WaitForSeconds(info.length);
-        
+
         switch (pl2.state)
         {
             case Player2Script.PlayerState.None:

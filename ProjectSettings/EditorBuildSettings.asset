@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Build Scene/TitleScreen.unity
     guid: 29f8df47257446248b7a5c91b7aef75e
   - enabled: 1
+    path: Assets/Scenes/Final Build Scene/TutorialScene.unity
+    guid: b5fb3d5e290d0b0418fefd907833192c
+  - enabled: 1
     path: Assets/Scenes/Final Build Scene/MainClassroom.unity
     guid: cb4179fb326cf6f47b1352d336053b91
   - enabled: 1
@@ -56,6 +59,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectStage/YuuStage.unity
     guid: eef0af27da2972e4e9c25fbf26722d2e
+  - enabled: 1
+    path: Assets/Scenes/Final Build Scene/ResultSceneClassroom.unity
+    guid: ce23eeebfd9e41249be5a968490911e0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
