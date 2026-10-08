@@ -21,16 +21,16 @@ public class ScoreReceiver : MonoBehaviour
     [SerializeField] private GameObject CanvasResult;
 
     [Header("Animation Settings")]
-    [Tooltip("Å‰‚Ìƒ_ƒ~[L‚Ñ‚Ì–Ú•WŠ„‡i0.1 = 10%j")]
+    [Tooltip("æœ€åˆã®ãƒ€ãƒŸãƒ¼ä¼¸ã³ã®ç›®æ¨™å‰²åˆï¼ˆ0.1 = 10%ï¼‰")]
     [SerializeField] private float initialFillAmount = 0.1f;
 
-    [Tooltip("Å‰‚Ìƒ_ƒ~[ã¸‚É‚©‚¯‚éŠÔi•bj")]
+    [Tooltip("æœ€åˆã®ãƒ€ãƒŸãƒ¼ä¸Šæ˜‡ã«ã‹ã‘ã‚‹æ™‚é–“ï¼ˆç§’ï¼‰")]
     [SerializeField] private float initialDuration = 0.5f;
 
-    [Tooltip("–{”ÔƒAƒjƒ[ƒVƒ‡ƒ“ŠJn‚Ü‚Å‚Ì‘Ò‹@ŠÔi•bj")]
+    [Tooltip("æœ¬ç•ªã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³é–‹å§‹ã¾ã§ã®å¾…æ©Ÿæ™‚é–“ï¼ˆç§’ï¼‰")]
     [SerializeField] private float waitTime = 1.0f;
 
-    [Tooltip("–{”Ô‚ÌƒXƒRƒA‚Ü‚ÅL‚Î‚·ŠÔi•bj")]
+    [Tooltip("æœ¬ç•ªã®ã‚¹ã‚³ã‚¢ã¾ã§ä¼¸ã°ã™æ™‚é–“ï¼ˆç§’ï¼‰")]
     [SerializeField] private float mainDuration = 1.5f;
 
     private void Start()
@@ -38,16 +38,16 @@ public class ScoreReceiver : MonoBehaviour
         CanvasResult.SetActive(false);
         canRestart = false;
         fadeController.FadeIn(0.5f, EaseType.Linear);
-        // 1. ƒXƒRƒAƒf[ƒ^‚Ìæ“¾
+        // 1. ã‚¹ã‚³ã‚¢ãƒ‡ãƒ¼ã‚¿ã®å–å¾—
         FetchScore();
 
-        // 2. UI‚Ì‰Šú‰»
+        // 2. UIã®åˆæœŸåŒ–
         if (bar1p != null) bar1p.fillAmount = 0f;
         if (bar2p != null) bar2p.fillAmount = 0f;
         if (counter1p != null) counter1p.text = "0";
         if (counter2p != null) counter2p.text = "0";
 
-        // 3. ƒAƒjƒ[ƒVƒ‡ƒ“‰‰oŠJn
+        // 3. ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ¼”å‡ºé–‹å§‹
         StartCoroutine(AnimateScoreRoutine());
     }
 
@@ -64,7 +64,6 @@ public class ScoreReceiver : MonoBehaviour
         if (ScoreManager.Instance == null) score1p = 100;
         if (ScoreManager.Instance == null) score2p = 100;
         if (ScoreManager.Instance == null) scoreTotal = 200;
-
             score1p = ScoreManager.Instance.player1Score;
             score2p = ScoreManager.Instance.player2Score;
         scoreTotal = score1p + score2p;
@@ -72,11 +71,11 @@ public class ScoreReceiver : MonoBehaviour
 
     private IEnumerator AnimateScoreRoutine()
     {
-        // ”O‚Ì‚½‚ßƒAƒjƒ[ƒVƒ‡ƒ“ŠJn‚É‚àÅV’l‚ğæ‚è’¼‚·
+        // å¿µã®ãŸã‚ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³é–‹å§‹æ™‚ã«ã‚‚æœ€æ–°å€¤ã‚’å–ã‚Šç›´ã™
         FetchScore();
         yield return new WaitForSeconds(waitTime);
         // --------------------------------------------------
-        // ƒtƒF[ƒY1: Å‰‚Éƒo[‚ğ—¼•û0.1’ö“x‚Ü‚Å¨‚¢‚æ‚­L‚Î‚·
+        // ãƒ•ã‚§ãƒ¼ã‚º1: æœ€åˆã«ãƒãƒ¼ã‚’ä¸¡æ–¹0.1ç¨‹åº¦ã¾ã§å‹¢ã„ã‚ˆãä¼¸ã°ã™
         // --------------------------------------------------
         float elapsed = 0f;
 
@@ -106,16 +105,16 @@ public class ScoreReceiver : MonoBehaviour
         if (counter2p != null) counter2p.text = initialDummy2p.ToString();
 
         // --------------------------------------------------
-        // ƒtƒF[ƒY2: w’è•b”‘Ò‹@
+        // ãƒ•ã‚§ãƒ¼ã‚º2: æŒ‡å®šç§’æ•°å¾…æ©Ÿ
         // --------------------------------------------------
         yield return new WaitForSeconds(waitTime);
 
         // --------------------------------------------------
-        // ƒtƒF[ƒY3: ƒXƒRƒA‚É‘Î‰‚·‚éŠ„‡E”’l‚Ü‚Å¨‚¢‚æ‚­L‚Î‚·
+        // ãƒ•ã‚§ãƒ¼ã‚º3: ã‚¹ã‚³ã‚¢ã«å¯¾å¿œã™ã‚‹å‰²åˆãƒ»æ•°å€¤ã¾ã§å‹¢ã„ã‚ˆãä¼¸ã°ã™
         // --------------------------------------------------
         elapsed = 0f;
 
-        // –{”Ô‚Ì–Ú•W’lİ’è‘O‚ÉA‚à‚¤ˆê“xƒXƒRƒA‚ğÅIŠm”F
+        // æœ¬ç•ªã®ç›®æ¨™å€¤è¨­å®šå‰ã«ã€ã‚‚ã†ä¸€åº¦ã‚¹ã‚³ã‚¢ã‚’æœ€çµ‚ç¢ºèª
         FetchScore();
 
         float targetFill1p = scoreTotal > 0 ? (float)score1p / scoreTotal : 0f;
@@ -137,7 +136,7 @@ public class ScoreReceiver : MonoBehaviour
             yield return null;
         }
 
-        // ÅI’l‚ğŠm’è
+        // æœ€çµ‚å€¤ã‚’ç¢ºå®š
         if (bar1p != null) bar1p.fillAmount = targetFill1p;
         if (bar2p != null) bar2p.fillAmount = targetFill2p;
         if (counter1p != null) counter1p.text = score1p.ToString();
