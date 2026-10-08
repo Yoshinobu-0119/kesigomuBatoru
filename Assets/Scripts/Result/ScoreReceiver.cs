@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 using TMPro;
-
 public class ScoreReceiver : MonoBehaviour
 {
+    [SerializeField] Animator animator;
     [SerializeField] private int score1p;
     [SerializeField] private int score2p;
     private int scoreTotal;
@@ -122,5 +123,12 @@ public class ScoreReceiver : MonoBehaviour
         if (bar2p != null) bar2p.fillAmount = targetFill2p;
         if (counter1p != null) counter1p.text = score1p.ToString();
         if (counter2p != null) counter2p.text = score2p.ToString();
+
+        PlayAnimTrigger("StartAnim");
+    }
+
+    public void PlayAnimTrigger(string AnimName)
+    {
+        animator.SetTrigger(AnimName);
     }
 }
