@@ -157,6 +157,8 @@ public class MenuManager : MonoBehaviour
         Selecting = true;
         int R = Random.Range(0, 5);
 
+        stagePreview.ChangeStage(R, false);
+
         // 
         for (int i = 0; i < buttons.Length; i++)
         {
