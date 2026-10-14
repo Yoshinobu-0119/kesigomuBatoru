@@ -8,12 +8,15 @@ public class MenuManager : MonoBehaviour
 {
     Vector3[] StartPos;
     public Vector3 EndPos;
-    
+
 
     public static string revengeStage;
 
     public Renderer[] buttons;
     public string[] sceneNames;
+
+    public StagePreview stagePreview;
+
 
     int index = 0;
     bool stick = false;
@@ -22,12 +25,15 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        Selecting = true;
         StartPos = new Vector3[buttons.Length];
-        for (int i = 0; i < buttons.Length; i++) {
-            StartPos[i]=buttons[i].transform.position;
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            StartPos[i] = buttons[i].transform.position;
         }
         UpdateButton();
-
+        StartCoroutine(ShowPreviewAfterIntro());
+        
     }
 
     void Update()
@@ -45,6 +51,10 @@ public class MenuManager : MonoBehaviour
 
 
                 UpdateButton();
+
+                // 
+                stagePreview.ChangeStage(index, true);
+
                 stick = true;
             }
             else if (v < -0.5f)
@@ -55,6 +65,9 @@ public class MenuManager : MonoBehaviour
 
 
                 UpdateButton();
+                //
+                stagePreview.ChangeStage(index, false);
+
                 stick = true;
             }
 
@@ -92,13 +105,14 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < buttons.Length; i++) {
+        for (int i = 0; i < buttons.Length; i++)
+        {
             Vector3 target;
             if (i == index) { target = EndPos; }
             else { target = StartPos[i]; }
-            buttons[i].transform.position = Vector3.MoveTowards(buttons[i].transform.position,target,200f * Time.deltaTime);
-        
-        
+            buttons[i].transform.position = Vector3.MoveTowards(buttons[i].transform.position, target, 200f * Time.deltaTime);
+
+
         }
 
 
@@ -123,7 +137,7 @@ public class MenuManager : MonoBehaviour
         {
             if (i == index)
             {
-                
+
 
 
                 buttons[i].material.EnableKeyword("_EMISSION");
@@ -160,4 +174,16 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(sceneNames[R]);
     }
 
+
+
+
+
+    IEnumerator ShowPreviewAfterIntro()
+    {
+        // 
+        yield return new WaitForSeconds(1f);
+
+        stagePreview.ShowFirstImage();
+        Selecting = false;
+    }
 }
