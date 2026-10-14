@@ -79,8 +79,7 @@ public class ScoreReceiver : MonoBehaviour
         // --------------------------------------------------
         float elapsed = 0f;
 
-        int initialDummy1p = Mathf.RoundToInt(score1p * initialFillAmount);
-        int initialDummy2p = Mathf.RoundToInt(score2p * initialFillAmount);
+        int initialDummyScore = Mathf.RoundToInt(Mathf.Max(score1p,score2p) * initialFillAmount);
 
         while (elapsed < initialDuration)
         {
@@ -93,16 +92,16 @@ public class ScoreReceiver : MonoBehaviour
             if (bar1p != null) bar1p.fillAmount = currentFill;
             if (bar2p != null) bar2p.fillAmount = currentFill;
 
-            if (counter1p != null) counter1p.text = Mathf.RoundToInt(Mathf.Lerp(0, initialDummy1p, t)).ToString();
-            if (counter2p != null) counter2p.text = Mathf.RoundToInt(Mathf.Lerp(0, initialDummy2p, t)).ToString();
+            if (counter1p != null) counter1p.text = Mathf.RoundToInt(Mathf.Lerp(0, initialDummyScore, t)).ToString();
+            if (counter2p != null) counter2p.text = Mathf.RoundToInt(Mathf.Lerp(0, initialDummyScore, t)).ToString();
 
             yield return null;
         }
 
         if (bar1p != null) bar1p.fillAmount = initialFillAmount;
         if (bar2p != null) bar2p.fillAmount = initialFillAmount;
-        if (counter1p != null) counter1p.text = initialDummy1p.ToString();
-        if (counter2p != null) counter2p.text = initialDummy2p.ToString();
+        if (counter1p != null) counter1p.text = initialDummyScore.ToString();
+        if (counter2p != null) counter2p.text = initialDummyScore.ToString();
 
         // --------------------------------------------------
         // フェーズ2: 指定秒数待機
@@ -130,8 +129,8 @@ public class ScoreReceiver : MonoBehaviour
             if (bar1p != null) bar1p.fillAmount = Mathf.Lerp(initialFillAmount, targetFill1p, t);
             if (bar2p != null) bar2p.fillAmount = Mathf.Lerp(initialFillAmount, targetFill2p, t);
 
-            if (counter1p != null) counter1p.text = Mathf.RoundToInt(Mathf.Lerp(initialDummy1p, score1p, t)).ToString();
-            if (counter2p != null) counter2p.text = Mathf.RoundToInt(Mathf.Lerp(initialDummy2p, score2p, t)).ToString();
+            if (counter1p != null) counter1p.text = Mathf.RoundToInt(Mathf.Lerp(initialDummyScore, score1p, t)).ToString();
+            if (counter2p != null) counter2p.text = Mathf.RoundToInt(Mathf.Lerp(initialDummyScore, score2p, t)).ToString();
 
             yield return null;
         }
