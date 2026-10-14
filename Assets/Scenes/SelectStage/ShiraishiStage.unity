@@ -1501,6 +1501,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58860488949653396, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
+      propertyPath: m_ColorTemperature
+      value: 7948
+      objectReference: {fileID: 0}
+    - target: {fileID: 58860488949653396, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2408963365731472548, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -1557,10 +1565,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4779495005558299563, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 149fe0ae115cbf748a56e31a1baa694c, type: 2}
     - target: {fileID: 5523624447545745548, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
+    - target: {fileID: 6213660195787336994, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 149fe0ae115cbf748a56e31a1baa694c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2725966200546490031, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}

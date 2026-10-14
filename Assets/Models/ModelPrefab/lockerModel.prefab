@@ -80,10 +80,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7581824019787871240, guid: bacda3955c14f7c479e0d2afe8ed48c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 149fe0ae115cbf748a56e31a1baa694c, type: 2}
+    - target: {fileID: -1753973841828523883, guid: bacda3955c14f7c479e0d2afe8ed48c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e454c7ab4f256a48abf1033af373d9e, type: 2}
     - target: {fileID: 919132149155446097, guid: bacda3955c14f7c479e0d2afe8ed48c5, type: 3}
       propertyPath: m_Name
       value: locker
       objectReference: {fileID: 0}
+    - target: {fileID: 3336182266008515235, guid: bacda3955c14f7c479e0d2afe8ed48c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e454c7ab4f256a48abf1033af373d9e, type: 2}
+    - target: {fileID: 4225599967954895189, guid: bacda3955c14f7c479e0d2afe8ed48c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 149fe0ae115cbf748a56e31a1baa694c, type: 2}
+    - target: {fileID: 5337865438184145679, guid: bacda3955c14f7c479e0d2afe8ed48c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 149fe0ae115cbf748a56e31a1baa694c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
