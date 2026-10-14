@@ -55,7 +55,7 @@ public class ScoreReceiver : MonoBehaviour
     {
         if (canRestart && (Input.GetButtonDown("Attack1") || Input.GetButtonDown("Attack2")))
         {
-            CanvasResult.SetActive(true);
+            StartCoroutine(ShowResultMenu());
         }
     }
 
@@ -151,5 +151,12 @@ public class ScoreReceiver : MonoBehaviour
     public void PlayAnimTrigger(string AnimName)
     {
         animator.SetTrigger(AnimName);
+    }
+
+    private IEnumerator ShowResultMenu()
+    {
+        yield return new WaitForSeconds (1f);
+
+        CanvasResult.SetActive(true);
     }
 }
