@@ -142,7 +142,7 @@ public class ScoreReceiver : MonoBehaviour
         if (counter2p != null) counter2p.text = score2p.ToString();
 
         PlayAnimTrigger("StartAnim");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         particle.Play();
         canRestart = true;
     }
