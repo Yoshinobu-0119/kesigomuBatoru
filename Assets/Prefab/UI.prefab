@@ -407,8 +407,7 @@ MonoBehaviour:
   canCountDown: 0
   frontText: {fileID: 3070538506782520801}
   backText: {fileID: 1865835308783399935}
-  minutes: 0
-  seconds: 2
+  time: 120
   resultPanel: {fileID: 0}
 --- !u!1 &3424305782547676127
 GameObject:

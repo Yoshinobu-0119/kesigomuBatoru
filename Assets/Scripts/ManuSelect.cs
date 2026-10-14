@@ -23,6 +23,11 @@ public class ManuSelect : MonoBehaviour
         SceneManager.LoadScene("MainClassroom");
     }
 
+    public void Tutorial_GO()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
     public void EndGame()
     {
         #if UNITY_EDITOR

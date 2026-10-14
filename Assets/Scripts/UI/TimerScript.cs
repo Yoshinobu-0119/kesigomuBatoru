@@ -92,6 +92,7 @@ public class TimerScript : MonoBehaviour
 
         //‘Ò‚Á‚½Œã‚És‚¤ˆ—
         yield return new WaitForSeconds(3);
-        resultPanel.SetActive(true);
+        //resultPanel.SetActive(true);
+        SceneManager.LoadScene("ResultSceneClassroom");
     }
 }
