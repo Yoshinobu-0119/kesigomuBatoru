@@ -136,7 +136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -660, y: 476}
+  m_AnchoredPosition: {x: -666.9, y: 476}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7310561533720234466
@@ -171,8 +171,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c31909a533957b24fb7be05650ce1262, type: 2}
-  m_sharedMaterial: {fileID: -243314953227691009, guid: c31909a533957b24fb7be05650ce1262, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 795002a9b4cb79b45ade3445044edce1, type: 2}
+  m_sharedMaterial: {fileID: -3083722668322759565, guid: 795002a9b4cb79b45ade3445044edce1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeFinale: 60
-  animationName: GrabBothScores
 --- !u!1 &2333234315373875761
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +420,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 3
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -826,7 +825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 594, y: 470}
+  m_AnchoredPosition: {x: 584.9, y: 470}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5415718175718182964
@@ -892,8 +891,8 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 3
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -964,7 +963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 797, y: 480}
+  m_AnchoredPosition: {x: 790.1, y: 480}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8463264917228911253
@@ -999,8 +998,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c31909a533957b24fb7be05650ce1262, type: 2}
-  m_sharedMaterial: {fileID: -243314953227691009, guid: c31909a533957b24fb7be05650ce1262, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 795002a9b4cb79b45ade3445044edce1, type: 2}
+  m_sharedMaterial: {fileID: -3083722668322759565, guid: 795002a9b4cb79b45ade3445044edce1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
