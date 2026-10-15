@@ -119,32 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &204532791 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7514641958404281971, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
-  m_PrefabInstance: {fileID: 1754694274}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &204532795
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204532791}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 68.36235, y: 4.57682, z: 43.434956}
-  m_Center: {x: -0.0000019073486, y: 0, z: 0}
 --- !u!1001 &227459977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -930,6 +904,14 @@ PrefabInstance:
       propertyPath: pl2
       value: 
       objectReference: {fileID: 1813245032}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: img.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: 'img.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 008f273573674ae45a40c9ca1b3663a6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1143,10 +1125,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7514641958404281971, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 204532795}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d245ecd0f2ea60544808e36e910558f3, type: 3}
 --- !u!4 &1813245031 stripped
 Transform:
