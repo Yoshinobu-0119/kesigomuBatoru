@@ -19,13 +19,19 @@ public class Player1Script : MonoBehaviour
     private float speedMultiplier = 1f; // 速度倍率（通常は1倍）
     private bool isReversed = false;     // 操作反転フラグ
 
+    //ScoreManagerから取得
+    public ScoreManager scoreManager;
+
+    
+    Vector3 defaultscale;
 
     public enum PlayerState
     {
         None,
         ScoreUP,
         SpeedUP,
-        Debuff
+        Debuff,
+        BigUp,
     }
 
     public PlayerState state = PlayerState.None;
@@ -35,7 +41,7 @@ public class Player1Script : MonoBehaviour
         //物理コンポーネントの取得
         rb = GetComponent<Rigidbody>();
         po = GetComponent<PoworBar>();
-
+        defaultscale = this.transform.localScale;
     }
 
     void Update()
@@ -143,6 +149,20 @@ public class Player1Script : MonoBehaviour
         Debug.Log("1pのスコアアップ終わり");
     }
 
+    //スケールアップ
+    public void ActivateBig(float duration)
+    {
+        StartCoroutine(StateRoutineBig(duration));
+    }
+    private IEnumerator StateRoutineBig(float duration)
+    {
+        state = PlayerState.BigUp;
+        this.transform.localScale = transform.localScale * 2.5f;
+        yield return new WaitForSeconds(duration); // duration秒待つ
+        this.transform.localScale = defaultscale;
+        state = PlayerState.None;
+        Debug.Log("縮んじゃった");
+    }
 
 
 
@@ -153,7 +173,8 @@ public class Player1Script : MonoBehaviour
         {
             if(state == PlayerState.None)
             {
-                int randomValue = UnityEngine.Random.Range(0, 3); // 0, 1, 2 のいずれか
+                int maxRandom = (scoreManager.player1Score < scoreManager.player2Score) ? 4 : 3;
+                int randomValue = UnityEngine.Random.Range(0, maxRandom); // 0, 1, 2 のいずれか
 
                 switch (randomValue)
                 {
@@ -178,6 +199,10 @@ public class Player1Script : MonoBehaviour
                     case 2:
                         Debug.Log("1pスコアアップ");
                         ActivateState(8.0f);
+                        break;
+                    case 3:
+                        Debug.Log("1pのがBIGになっちゃった");
+                        ActivateBig(8.0f);
                         break;
 
                 }
