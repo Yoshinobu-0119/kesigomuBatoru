@@ -59,7 +59,7 @@ public class MenuManager : MonoBehaviour
 
                 // 
                 stagePreview.ChangeStage(index, true);
-                audioSource.PlayOneShot(se_select);
+                audioSource.PlayOneShot(se_select,0.5f);
                 stick = true;
             }
             else if (v < -0.5f)
@@ -72,7 +72,7 @@ public class MenuManager : MonoBehaviour
                 UpdateButton();
                 //
                 stagePreview.ChangeStage(index, false);
-                audioSource.PlayOneShot(se_select);
+                audioSource.PlayOneShot(se_select,0.5f);
                 stick = true;
             }
 
