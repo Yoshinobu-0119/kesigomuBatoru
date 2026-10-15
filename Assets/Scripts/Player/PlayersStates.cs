@@ -56,8 +56,6 @@ public class PlayersStates : MonoBehaviour
                 status1p.sprite = img[2]; break;
             case Player1Script.PlayerState.Debuff:
                 status1p.sprite = img[3]; break;
-            case Player1Script.PlayerState.BigUp:
-                status1p.sprite = img[4]; break;
         }
 
         anim.Play("1PitemResult");
@@ -82,8 +80,6 @@ public class PlayersStates : MonoBehaviour
                 status2p.sprite = img[2]; break;
             case Player2Script.PlayerState.Debuff:
                 status2p.sprite = img[3]; break;
-            case Player2Script.PlayerState.BigUp:
-                status1p.sprite = img[4]; break;
         }
 
         anim.Play("2PitemResult");

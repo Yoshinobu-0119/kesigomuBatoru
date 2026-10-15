@@ -2214,17 +2214,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &1031285829 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3702688100644574051, guid: d36cdd0e63d54bc4588cf3d77facb71c, type: 3}
-  m_PrefabInstance: {fileID: 1611084275}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76fcef024aee330459c41f23348beea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1061079081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4514,10 +4503,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2232686826451661542, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
-      propertyPath: scoreManager
-      value: 
-      objectReference: {fileID: 1031285829}
     - target: {fileID: 4551396120215538253, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: imgHP
       value: 
@@ -4540,7 +4525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7993447099577676759, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.5000003
       objectReference: {fileID: 0}
     - target: {fileID: 7993447099577676759, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4610,10 +4595,6 @@ PrefabInstance:
       propertyPath: imgHP
       value: 
       objectReference: {fileID: 1636224858}
-    - target: {fileID: 5557082375030292352, guid: f1619f8823040354ba19fca7eb0cb341, type: 3}
-      propertyPath: scoreManager
-      value: 
-      objectReference: {fileID: 1031285829}
     - target: {fileID: 7242083824247122532, guid: f1619f8823040354ba19fca7eb0cb341, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42541885
@@ -4774,14 +4755,6 @@ PrefabInstance:
       propertyPath: pl2
       value: 
       objectReference: {fileID: 1296900087}
-    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
-      propertyPath: img.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
-      propertyPath: 'img.Array.data[4]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 008f273573674ae45a40c9ca1b3663a6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

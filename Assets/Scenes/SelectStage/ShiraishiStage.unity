@@ -801,14 +801,6 @@ PrefabInstance:
       propertyPath: pl2
       value: 
       objectReference: {fileID: 1037819056}
-    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
-      propertyPath: img.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
-      propertyPath: 'img.Array.data[4]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 008f273573674ae45a40c9ca1b3663a6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3489,7 +3481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
-  scoreManager: {fileID: 1166281208}
   state: 0
 --- !u!114 &1037819057
 MonoBehaviour:
@@ -3950,7 +3941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053177858904903066, guid: d36cdd0e63d54bc4588cf3d77facb71c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8285812282059777715, guid: d36cdd0e63d54bc4588cf3d77facb71c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4111,17 +4102,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1166281208 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3702688100644574051, guid: d36cdd0e63d54bc4588cf3d77facb71c, type: 3}
-  m_PrefabInstance: {fileID: 1166281205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76fcef024aee330459c41f23348beea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1166552046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2532688523459855146, guid: 518c88e5303fe9f41a48a81261fba69d, type: 3}
@@ -6766,7 +6746,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
-  scoreManager: {fileID: 1166281208}
   state: 0
 --- !u!54 &1900685637
 Rigidbody:
