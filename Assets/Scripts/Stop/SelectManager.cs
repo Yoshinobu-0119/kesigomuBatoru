@@ -9,6 +9,9 @@ public class MenuManager : MonoBehaviour
     Vector3[] StartPos;
     public Vector3 EndPos;
 
+    public AudioSource audioSource;
+    public AudioClip se_select;
+    public AudioClip se_push;
 
     public static string revengeStage;
 
@@ -22,6 +25,8 @@ public class MenuManager : MonoBehaviour
     bool stick = false;
     private Animator anim;
     bool Selecting = false;
+
+    private bool isChanging = false;
 
     void Start()
     {
@@ -54,7 +59,7 @@ public class MenuManager : MonoBehaviour
 
                 // 
                 stagePreview.ChangeStage(index, true);
-
+                audioSource.PlayOneShot(se_select);
                 stick = true;
             }
             else if (v < -0.5f)
@@ -67,7 +72,7 @@ public class MenuManager : MonoBehaviour
                 UpdateButton();
                 //
                 stagePreview.ChangeStage(index, false);
-
+                audioSource.PlayOneShot(se_select);
                 stick = true;
             }
 
@@ -80,7 +85,7 @@ public class MenuManager : MonoBehaviour
         if (Mathf.Abs(v) < 0.2f)
             stick = false;
 
-        if (Input.GetButtonDown("Attack1"))
+        if (Input.GetButtonDown("Attack1") && !isChanging)
         {
             if (index < 5)
             {
@@ -88,13 +93,18 @@ public class MenuManager : MonoBehaviour
                 buttons[index].material.SetColor("_BaseColor", Color.red * 5f);
                 buttons[index].material.SetColor("_EmissionColor", Color.red * 5f);
 
+                StartCoroutine(ChangeScene());
+
+               /*
                 MenuManager.revengeStage = sceneNames[index];
-                SceneManager.LoadScene(sceneNames[index]);
+                SceneManager.LoadScene(sceneNames[index]);*/
             }
             if (index == 5)
             {
+                
+                
                 StartCoroutine(RandomStage());
-
+                
 
                 /*int R = Random.Range(0, 5);
                 anim = GetComponent<Animator>();
@@ -118,6 +128,16 @@ public class MenuManager : MonoBehaviour
 
 
     }
+
+
+    private IEnumerator ChangeScene() {
+    isChanging = true;
+        audioSource.PlayOneShot(se_push);
+        yield return new WaitForSecondsRealtime(se_push.length);
+        MenuManager.revengeStage = sceneNames[index];
+        SceneManager.LoadScene(sceneNames[index]);
+    }
+
 
     /* public void ClickRandomButton()
      {
@@ -169,7 +189,7 @@ public class MenuManager : MonoBehaviour
         buttons[R].material.EnableKeyword("_EMISSION");
         buttons[R].material.SetColor("_BaseColor", Color.red * 5f);
         buttons[R].material.SetColor("_EmissionColor", Color.red * 5f);
-
+        audioSource.PlayOneShot(se_push, 2f);
         yield return new WaitForSeconds(1.2f);
 
         MenuManager.revengeStage = sceneNames[R];
