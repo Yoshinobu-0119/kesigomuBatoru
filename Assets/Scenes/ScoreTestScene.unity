@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -251,6 +252,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 0
   is1p: 0
+  is2p: 0
 --- !u!1 &140867049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5817748415509642903, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
@@ -289,6 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -299,6 +302,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 3
   is1p: 0
+  is2p: 0
 --- !u!54 &152919528
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -517,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -527,6 +532,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 2
   is1p: 0
+  is2p: 0
 --- !u!54 &309863386
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1728,6 +1734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 5803174496068170495, guid: 177eca5b950795349940060f91366c04, type: 3}
+  itemSpawnIndicator: {fileID: 0}
   spawntime: 10
 --- !u!4 &901447800
 Transform:
@@ -2151,6 +2158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 5803174496068170495, guid: 177eca5b950795349940060f91366c04, type: 3}
+  itemSpawnIndicator: {fileID: 0}
   spawntime: 10
 --- !u!4 &1300866708
 Transform:
@@ -2391,63 +2399,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 952274622}
   m_SourcePrefab: {fileID: 100100000, guid: 5e9c6821f0fd1d74d88e39ba459161ac, type: 3}
---- !u!1001 &1461418050
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -20.85
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -13.41
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.245603
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
-      propertyPath: m_Name
-      value: blackBoardEraser
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b4e0dcb0d4eaee54d9b03b5feccaf1c1, type: 3}
 --- !u!1 &1604077189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,6 +2671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 1
   canRespawn: 1
@@ -2730,6 +2682,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!1001 &1969069672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2809,6 +2762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
   isPlayer1p: 1
   isPlayer2p: 0
   canRespawn: 1
@@ -2819,6 +2773,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!114 &2003810972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2928,6 +2883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -2938,6 +2894,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 2
   is1p: 0
+  is2p: 0
 --- !u!54 &2024350405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3427,7 +3384,6 @@ SceneRoots:
   - {fileID: 40990238}
   - {fileID: 530445315}
   - {fileID: 1969069672}
-  - {fileID: 1461418050}
   - {fileID: 896864398}
   - {fileID: 1004154398}
   - {fileID: 506899373}
