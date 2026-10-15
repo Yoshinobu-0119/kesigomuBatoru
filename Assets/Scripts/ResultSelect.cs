@@ -33,4 +33,11 @@ public class ResultSelectanuSelect : MonoBehaviour
         SceneManager.LoadScene("MainClassroom");
     }
 
+    //追加：リスタート時のステージ名取得、ステージイントロシーンに遷移する処理の実装
+    //（各ステージシーンからゲーム開始しないとバグるよ　インスタンス化したScoreManagerを参照してるので...）
+    public void RestartBack()
+    {
+        string stageName = "Intro" + ScoreManager.stageName;
+        SceneManager.LoadScene(stageName);
+    }
 }

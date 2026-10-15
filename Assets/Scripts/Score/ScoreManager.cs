@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
@@ -15,7 +17,7 @@ public class ScoreManager : MonoBehaviour
     public Player1Script pl1;
     public Player2Script pl2;
 
-
+    public static string stageName;
 
     //èÄîı
     private void Awake()
@@ -30,6 +32,8 @@ public class ScoreManager : MonoBehaviour
         player1Score = 0;
         player2Score = 0;
         UpdateScore();
+
+        stageName = SceneManager.GetActiveScene().name;
     }
 
     public void AddScore(bool is1p, bool is2p, int score)
