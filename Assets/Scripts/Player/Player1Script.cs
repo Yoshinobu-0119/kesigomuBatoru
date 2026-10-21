@@ -22,7 +22,7 @@ public class Player1Script : MonoBehaviour
     //ScoreManagerから取得
     public ScoreManager scoreManager;
 
-    
+    private float rb_defaultmass;
     Vector3 defaultscale;
 
     public enum PlayerState
@@ -42,6 +42,7 @@ public class Player1Script : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         po = GetComponent<PoworBar>();
         defaultscale = this.transform.localScale;
+        rb_defaultmass = rb.mass;
     }
 
     void Update()
@@ -161,16 +162,20 @@ public class Player1Script : MonoBehaviour
     }
 
     //スケールアップ
-    public void ActivateBig(float duration)
+    public void ActivateBig(float duration , float multiplier)
     {
-        StartCoroutine(StateRoutineBig(duration));
+        StartCoroutine(StateRoutineBig(duration, multiplier));
     }
-    private IEnumerator StateRoutineBig(float duration)
+    private IEnumerator StateRoutineBig(float duration, float multiplier)
     {
         state = PlayerState.BigUp;
         this.transform.localScale = transform.localScale * 2.5f;
+        rb.mass = 2f;
+        speedMultiplier = multiplier; // 速度を○倍にする
         yield return new WaitForSeconds(duration); // duration秒待つ
         this.transform.localScale = defaultscale;
+        rb.mass = rb_defaultmass;
+        speedMultiplier = 1f; // 元に戻す
         state = PlayerState.None;
         Debug.Log("縮んじゃった");
     }
@@ -213,7 +218,7 @@ public class Player1Script : MonoBehaviour
                         break;
                     case 3:
                         Debug.Log("1pのがBIGになっちゃった");
-                        ActivateBig(8.0f);
+                        ActivateBig(8.0f,2.0f);
                         break;
 
                 }
