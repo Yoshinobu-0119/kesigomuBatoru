@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
+  deathParticle: {fileID: 7761539336866364784, guid: 0a698d6ef1147fe47992571a7708ea15, type: 3}
   isPlayer1p: 1
   isPlayer2p: 0
   canRespawn: 1
@@ -2426,6 +2427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -3705,6 +3707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
+  deathParticle: {fileID: 7761539336866364784, guid: 0a698d6ef1147fe47992571a7708ea15, type: 3}
   isPlayer1p: 0
   isPlayer2p: 1
   canRespawn: 1
@@ -4107,6 +4110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1

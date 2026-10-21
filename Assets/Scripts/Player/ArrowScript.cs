@@ -42,15 +42,13 @@ public class ArrowScript : MonoBehaviour
         }
         else if (ID == 2)
         {
-            keyboardX = 0;
             keyboardX += Input.GetKey(KeyCode.RightArrow) ? 1 : 0;
             keyboardX += Input.GetKey(KeyCode.LeftArrow) ? -1 : 0;
             gamepadX = Input.GetAxis("Horizontal2");
 
-            gamepadX = 0;
             keyboardY += Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
             keyboardY += Input.GetKey(KeyCode.DownArrow) ? -1 : 0;
-            gamepadX = Input.GetAxis("Vertical2");
+            gamepadY = Input.GetAxis("Vertical2");
         }
 
         //スティックの入力を取得

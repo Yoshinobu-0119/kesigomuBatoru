@@ -7,6 +7,8 @@ public class AddScoreObject : MonoBehaviour
 
     [SerializeField] private GameObject hitParticle;
 
+    [SerializeField] private GameObject deathParticle;
+
     [Header("自身がプレイヤーかどうか")]
     public bool isPlayer1p;
     public bool isPlayer2p;
@@ -74,6 +76,11 @@ public class AddScoreObject : MonoBehaviour
     {
         if (other.gameObject.name == "void")
         {
+            if (deathParticle)
+            {
+                GameObject particle = Instantiate(deathParticle, transform.position, hitParticle.transform.rotation);
+            }
+
             if (this.isPlayer1p)
             {
                 is1p = false;
