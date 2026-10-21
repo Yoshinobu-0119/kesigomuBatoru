@@ -76,7 +76,11 @@ public class StopManager : MonoBehaviour
             if (index == 0)
                 ResumeGame();
             else
+            {
+                Time.timeScale = 1f;
+                CurrentState = GameState.Gameplay;
                 SceneManager.LoadScene(titleScene);
+            }
         }
 
 
