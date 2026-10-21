@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28766819e3736a46aa8be5190722611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 5803174496068170495, guid: 177eca5b950795349940060f91366c04, type: 3}
+  itemPrefab: {fileID: 5221477305505262205, guid: 177eca5b950795349940060f91366c04, type: 3}
   itemSpawnIndicator: {fileID: 6152129891903228270}
   spawntime: 10
 --- !u!1 &1815805081057039391

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4649292939922240180}
   - component: {fileID: 4121874429554689818}
   - component: {fileID: 8660518007770102977}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GenericEraser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,6 +58,7 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
 --- !u!54 &4121874429554689818
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,18 +174,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ff76c29d5ca0b6a48b19761434a1d153, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: -2813467912831258332, guid: d44160b23a21b2b4bb70db9f58dd49b1, type: 3}
+      objectReference: {fileID: 2100000, guid: b88f69415fac5f94b960ec40c6ea107c, type: 2}
     - target: {fileID: -7511558181221131132, guid: ff76c29d5ca0b6a48b19761434a1d153, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: -373795160481057489, guid: db2aee598a25165489f8c5cd574ba70a, type: 3}
+      objectReference: {fileID: 2100000, guid: 3830579412da8b549881da0da6f4ab92, type: 2}
     - target: {fileID: 919132149155446097, guid: ff76c29d5ca0b6a48b19761434a1d153, type: 3}
       propertyPath: m_Name
       value: eraser
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff76c29d5ca0b6a48b19761434a1d153, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
