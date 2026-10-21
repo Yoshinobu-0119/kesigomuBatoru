@@ -51,9 +51,20 @@ public class Player1Script : MonoBehaviour
             return;
         }
 
-        //左スティック（または方向キー）で方向を定める
-        float horizontal = Input.GetAxis("Horizontal" + PlayerID);
-        float vertical = Input.GetAxis("Vertical" + PlayerID);
+        //キーボードとゲームパッドの入力を取得
+        float keyboardX = 0;
+        keyboardX += Input.GetKey(KeyCode.D) ? 1 : 0;
+        keyboardX += Input.GetKey(KeyCode.A) ? -1 : 0;
+        float gamepadX = Input.GetAxis("Horizontal1");
+
+        float keyboardY = 0;
+        keyboardY += Input.GetKey(KeyCode.W) ? 1 : 0;
+        keyboardY += Input.GetKey(KeyCode.S) ? -1 : 0;
+        float gamepadY = Input.GetAxis("Vertical1");
+
+        //入力を元に移動に使用する数値を設定
+        float horizontal = keyboardX != 0 ? keyboardX : gamepadX;
+        float vertical = keyboardY != 0 ? keyboardY : gamepadY;
 
         //【追加】操作反転フラグが立っている場合、入力を逆にする
         if (isReversed)
@@ -73,7 +84,7 @@ public class Player1Script : MonoBehaviour
             //移動方向の逆を計算
             moveDirection = -new Vector3(horizontal, 0f, vertical).normalized;
 
-            if (Input.GetButtonDown("Attack" + PlayerID))
+            if (Input.GetButtonDown("Attack" + PlayerID) || Input.GetKeyDown(KeyCode.LeftShift))
             {
                 strength = charge;
                 MovePowor();
