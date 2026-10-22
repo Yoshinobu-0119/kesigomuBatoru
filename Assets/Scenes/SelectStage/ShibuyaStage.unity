@@ -545,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.89
+      value: -10.11
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -553,7 +553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01
+      value: -4.81
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4538,9 +4538,21 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: 'img.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: dd2552025cedef843ae21cb1ce610e24, type: 3}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: 'img.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: abd0dc0b36d561f4ba35fbdd00dc448f, type: 3}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: 'img.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: cd6ca9f1f26f4dc4b92a03a5c4c67cba, type: 3}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
       propertyPath: 'img.Array.data[4]'
       value: 
-      objectReference: {fileID: 21300000, guid: 008f273573674ae45a40c9ca1b3663a6, type: 3}
+      objectReference: {fileID: 21300000, guid: 76aed0767db2bc04bb0ce88344aabe17, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
