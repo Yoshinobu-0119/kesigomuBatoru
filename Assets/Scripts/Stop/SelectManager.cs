@@ -45,7 +45,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Selecting)
             return;
-        float v = Input.GetAxisRaw("Vertical1");
+        float v = Input.GetAxisRaw("Vertical1") != 0 ? Input.GetAxisRaw("Vertical1") : Input.GetAxisRaw("Vertical2");
         if (!stick)
         {
             if (v > 0.5f)
@@ -85,7 +85,9 @@ public class MenuManager : MonoBehaviour
         if (Mathf.Abs(v) < 0.2f)
             stick = false;
 
-        if (Input.GetButtonDown("Attack1") && !isChanging)
+        if (!isChanging &&
+        (Input.GetButtonDown("Attack1") ||
+        Input.GetButtonDown("Attack2")))
         {
             if (index < 5)
             {
