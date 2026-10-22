@@ -45,7 +45,14 @@ public class MenuManager : MonoBehaviour
     {
         if (Selecting)
             return;
-        float v = Input.GetAxisRaw("Vertical1") != 0 ? Input.GetAxisRaw("Vertical1") : Input.GetAxisRaw("Vertical2");
+
+        float keyboardY = 0;
+        keyboardY += Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
+        keyboardY += Input.GetKey(KeyCode.DownArrow) ? -1 : 0;
+
+        float gamepadY = Input.GetAxisRaw("Vertical1") != 0 ? Input.GetAxisRaw("Vertical1") : Input.GetAxisRaw("Vertical2");
+        float v = keyboardY != 0 ? keyboardY : gamepadY;
+
         if (!stick)
         {
             if (v > 0.5f)
