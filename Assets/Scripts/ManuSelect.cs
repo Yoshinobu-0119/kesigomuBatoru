@@ -11,9 +11,9 @@ public class ManuSelect : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        start = GameObject.Find("/Canvas/Button1").GetComponent<Button>();
-        replace = GameObject.Find("/Canvas/Button2").GetComponent<Button>();
-        endGame = GameObject.Find("/Canvas/Button3").GetComponent<Button>();
+        start = GameObject.Find("/Canvas/StartButton").GetComponent<Button>();
+        replace = GameObject.Find("/Canvas/TutorialButton").GetComponent<Button>();
+        endGame = GameObject.Find("/Canvas/QuitButton").GetComponent<Button>();
 
         start.Select();
     }

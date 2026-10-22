@@ -19,9 +19,9 @@ TagManager:
   - WallSurface
   - 
   - 
-  - 
-  - 
-  - 
+  - NeutralShader
+  - Player1Shader
+  - Player2Shader
   - 
   - 
   - 
