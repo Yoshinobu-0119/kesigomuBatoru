@@ -19,13 +19,19 @@ public class Player1Script : MonoBehaviour
     private float speedMultiplier = 1f; // 速度倍率（通常は1倍）
     private bool isReversed = false;     // 操作反転フラグ
 
+    //ScoreManagerから取得
+    public ScoreManager scoreManager;
+
+    private float rb_defaultmass;
+    Vector3 defaultscale;
 
     public enum PlayerState
     {
         None,
         ScoreUP,
         SpeedUP,
-        Debuff
+        Debuff,
+        BigUp,
     }
 
     public PlayerState state = PlayerState.None;
@@ -35,7 +41,8 @@ public class Player1Script : MonoBehaviour
         //物理コンポーネントの取得
         rb = GetComponent<Rigidbody>();
         po = GetComponent<PoworBar>();
-
+        defaultscale = this.transform.localScale;
+        rb_defaultmass = rb.mass;
     }
 
     void Update()
@@ -45,9 +52,20 @@ public class Player1Script : MonoBehaviour
             return;
         }
 
-        //左スティック（または方向キー）で方向を定める
-        float horizontal = Input.GetAxis("Horizontal" + PlayerID);
-        float vertical = Input.GetAxis("Vertical" + PlayerID);
+        //キーボードとゲームパッドの入力を取得
+        float keyboardX = 0;
+        keyboardX += Input.GetKey(KeyCode.D) ? 1 : 0;
+        keyboardX += Input.GetKey(KeyCode.A) ? -1 : 0;
+        float gamepadX = Input.GetAxis("Horizontal1");
+
+        float keyboardY = 0;
+        keyboardY += Input.GetKey(KeyCode.W) ? 1 : 0;
+        keyboardY += Input.GetKey(KeyCode.S) ? -1 : 0;
+        float gamepadY = Input.GetAxis("Vertical1");
+
+        //入力を元に移動に使用する数値を設定
+        float horizontal = keyboardX != 0 ? keyboardX : gamepadX;
+        float vertical = keyboardY != 0 ? keyboardY : gamepadY;
 
         //【追加】操作反転フラグが立っている場合、入力を逆にする
         if (isReversed)
@@ -67,7 +85,7 @@ public class Player1Script : MonoBehaviour
             //移動方向の逆を計算
             moveDirection = -new Vector3(horizontal, 0f, vertical).normalized;
 
-            if (Input.GetButtonDown("Attack" + PlayerID))
+            if (Input.GetButtonDown("Attack" + PlayerID) || Input.GetKeyDown(KeyCode.LeftShift))
             {
                 strength = charge;
                 MovePowor();
@@ -143,6 +161,24 @@ public class Player1Script : MonoBehaviour
         Debug.Log("1pのスコアアップ終わり");
     }
 
+    //スケールアップ
+    public void ActivateBig(float duration , float multiplier)
+    {
+        StartCoroutine(StateRoutineBig(duration, multiplier));
+    }
+    private IEnumerator StateRoutineBig(float duration, float multiplier)
+    {
+        state = PlayerState.BigUp;
+        this.transform.localScale = transform.localScale * 2.5f;
+        rb.mass = 2f;
+        speedMultiplier = multiplier; // 速度を○倍にする
+        yield return new WaitForSeconds(duration); // duration秒待つ
+        this.transform.localScale = defaultscale;
+        rb.mass = rb_defaultmass;
+        speedMultiplier = 1f; // 元に戻す
+        state = PlayerState.None;
+        Debug.Log("縮んじゃった");
+    }
 
 
 
@@ -153,7 +189,8 @@ public class Player1Script : MonoBehaviour
         {
             if(state == PlayerState.None)
             {
-                int randomValue = UnityEngine.Random.Range(0, 3); // 0, 1, 2 のいずれか
+                int maxRandom = (scoreManager.player1Score < scoreManager.player2Score) ? 4 : 3;
+                int randomValue = UnityEngine.Random.Range(0, maxRandom); // 0, 1, 2 のいずれか
 
                 switch (randomValue)
                 {
@@ -178,6 +215,10 @@ public class Player1Script : MonoBehaviour
                     case 2:
                         Debug.Log("1pスコアアップ");
                         ActivateState(8.0f);
+                        break;
+                    case 3:
+                        Debug.Log("1pのがBIGになっちゃった");
+                        ActivateBig(8.0f,2.0f);
                         break;
 
                 }

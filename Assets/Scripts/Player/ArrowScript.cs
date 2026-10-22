@@ -24,9 +24,38 @@ public class ArrowScript : MonoBehaviour
             return;
         }
 
+        float keyboardX= 0;
+        float keyboardY = 0;
+        float gamepadX = 0;
+        float gamepadY = 0;
+        if (ID == 1)
+        {
+
+            keyboardX += Input.GetKey(KeyCode.D) ? 1 : 0;
+            keyboardX += Input.GetKey(KeyCode.A) ? -1 : 0;
+            gamepadX = Input.GetAxis("Horizontal1");
+
+
+            keyboardY += Input.GetKey(KeyCode.W) ? 1 : 0;
+            keyboardY += Input.GetKey(KeyCode.S) ? -1 : 0;
+            gamepadY = Input.GetAxis("Vertical1");
+        }
+        else if (ID == 2)
+        {
+            keyboardX += Input.GetKey(KeyCode.RightArrow) ? 1 : 0;
+            keyboardX += Input.GetKey(KeyCode.LeftArrow) ? -1 : 0;
+            gamepadX = Input.GetAxis("Horizontal2");
+
+            keyboardY += Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
+            keyboardY += Input.GetKey(KeyCode.DownArrow) ? -1 : 0;
+            gamepadY = Input.GetAxis("Vertical2");
+        }
+
         //スティックの入力を取得
-        float moveHorizontal = Input.GetAxisRaw("Horizontal" + ID);
-        float moveVertical = Input.GetAxisRaw("Vertical" + ID);
+        float moveHorizontal = keyboardX != 0 ? keyboardX : gamepadX;
+        float moveVertical = keyboardY != 0 ? keyboardY : gamepadY;
+
+
 
         //入力ベクトルを作成
         Vector2 inputDirection = -new Vector2(moveHorizontal,moveVertical);
