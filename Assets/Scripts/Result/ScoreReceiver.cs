@@ -7,6 +7,9 @@ public class ScoreReceiver : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] ParticleSystem particle;
+    [SerializeField] ParticleSystem particle2;
+    [SerializeField] AudioSource resultBGM;
+    [SerializeField] AudioSource winSE;
     [SerializeField] FadeController fadeController;
     [SerializeField] private int score1p;
     [SerializeField] private int score2p;
@@ -143,8 +146,12 @@ public class ScoreReceiver : MonoBehaviour
 
         PlayAnimTrigger("StartAnim");
         yield return new WaitForSeconds(0.5f);
+        winSE.Play();
         particle.Play();
+        particle2.Play();
         canRestart = true;
+        yield return new WaitForSeconds(4.0f);
+        resultBGM.Play();
     }
 
     public void PlayAnimTrigger(string AnimName)
