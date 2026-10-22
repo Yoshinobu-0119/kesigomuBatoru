@@ -39,7 +39,7 @@ public class StopManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Pause") && ts.canCountDown == true)
+        if (ts.canCountDown == true && Input.GetButtonDown("Pause") || Input.GetKeyDown(KeyCode.Space))
         {
             if (isPause)
                 ResumeGame();
@@ -50,7 +50,12 @@ public class StopManager : MonoBehaviour
         if (!isPause)
             return;
 
-        float h = Input.GetAxisRaw("Horizontal1") != 0 ? Input.GetAxisRaw("Horizontal1") : Input.GetAxisRaw("Horizontal2");
+        float keyboardX = 0;
+        keyboardX += Input.GetKey(KeyCode.RightArrow) ? 1 : 0;
+        keyboardX += Input.GetKey(KeyCode.LeftArrow) ? -1 : 0;
+        float gamepadX = Input.GetAxisRaw("Horizontal1") != 0 ? Input.GetAxisRaw("Horizontal1") : Input.GetAxisRaw("Horizontal2");
+
+        float h = keyboardX != 0 ? keyboardX : gamepadX;
 
         if (!stick)
         {
