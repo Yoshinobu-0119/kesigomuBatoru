@@ -11,24 +11,43 @@ public class TimerScript : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI frontText;
     [SerializeField] private TextMeshProUGUI backText;
+
     //[SerializeField] private TextMeshProUGUI centerText;
 
     private int seconds;
     private int minutes;
 
+    public float timerRemainingAnimationLength;
+
     [Header("Seconds(秒)")]
     public float time;
-    //private float timeFlow;
 
     public GameObject resultPanel;
+
+    //終了表示
+    [SerializeField] private GameObject finishDisplay;
+
+    //残り時間の表示
+    [SerializeField] private GameObject timeLeftDisplay;
+    [SerializeField] private TextMeshProUGUI timerLeft;
+    private bool updateTime;
+
+    [Header("残り時間の表示")]
+    public int firstWarning;
+    public int secondWarning;
+    public int finalWarning;
+
     private void Awake()
     {
         resultPanel = GameObject.Find("ResultPanel");
+        finishDisplay.SetActive(false);
+        timeLeftDisplay.SetActive(false);
     }
 
     private void Start()
     {
         resultPanel.SetActive(false);
+        updateTime = false;
     }
 
     // Update is called once per frame
@@ -52,6 +71,23 @@ public class TimerScript : MonoBehaviour
 
         frontText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
         backText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+
+        //残り時間の表示
+        if (Mathf.CeilToInt(time) == firstWarning)
+        {
+            updateTime = true;
+        }
+
+        else if (Mathf.CeilToInt(time) == secondWarning)
+        {
+            updateTime = true;
+        }
+
+        else if (Mathf.CeilToInt(time) == finalWarning)
+        {
+            StartCoroutine(TimeLeftReminder());
+            timerLeft.text = Mathf.CeilToInt(time).ToString();         
+        }
     }
 
     public void CountDown() //Animation Event
@@ -83,6 +119,8 @@ public class TimerScript : MonoBehaviour
     {
         //即時に行う処理
         canCountDown = false;
+        finishDisplay.SetActive(true);
+
         minutes = 0;
         seconds = 0;
         //centerText.text = "FINISH!";
@@ -94,5 +132,13 @@ public class TimerScript : MonoBehaviour
         yield return new WaitForSeconds(3);
         //resultPanel.SetActive(true);
         SceneManager.LoadScene("ResultSceneClassroom");
+    }
+
+    private IEnumerator TimeLeftReminder()
+    {
+        timeLeftDisplay.SetActive(true);
+
+        yield return new WaitForSeconds(timerRemainingAnimationLength);
+        timeLeftDisplay.SetActive(false);
     }
 }

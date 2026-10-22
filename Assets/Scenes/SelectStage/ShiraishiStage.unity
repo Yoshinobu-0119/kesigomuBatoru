@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &5751762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 22279385397594959, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
+  m_PrefabInstance: {fileID: 1444926378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &32313942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5905598908716173314, guid: 518c88e5303fe9f41a48a81261fba69d, type: 3}
@@ -940,6 +945,10 @@ PrefabInstance:
     - target: {fileID: 1834286459820669035, guid: c331533c1af61674681bf5e431ba6835, type: 3}
       propertyPath: m_Name
       value: Stopmanager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834286459820669035, guid: c331533c1af61674681bf5e431ba6835, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2616423003652790300, guid: c331533c1af61674681bf5e431ba6835, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2307,6 +2316,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPause
       objectReference: {fileID: 0}
+    - target: {fileID: 4362208181425534439, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817748415509642903, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828203398258602058, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6303702181549796925, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2386,6 +2407,22 @@ PrefabInstance:
     - target: {fileID: 6303702181549796925, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091133845216425729, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498260490300764621, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498260490300764621, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498260490300764621, guid: 713509bc47a74314ca2f20229f86c359, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3520,6 +3557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 1
   canRespawn: 1
@@ -5105,9 +5143,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 22279385397594959, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 413827125089892418, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 413827125089892418, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2593941729023115007, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: m_Sprite
@@ -5233,9 +5279,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4877145337039063406, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894504012618463536, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8035378841959538869, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: time
-      value: 70
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 8035378841959538869, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: minutes
@@ -5245,6 +5299,10 @@ PrefabInstance:
       propertyPath: seconds
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8035378841959538869, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
+      propertyPath: resultPanel
+      value: 
+      objectReference: {fileID: 5751762}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -6527,6 +6585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
+  deathParticle: {fileID: 0}
   isPlayer1p: 1
   isPlayer2p: 0
   canRespawn: 1

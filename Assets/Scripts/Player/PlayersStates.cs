@@ -39,12 +39,12 @@ public class PlayersStates : MonoBehaviour
 
     private IEnumerator P1ItemVisual()
     {
-        anim.Play("1Pshuffling");
+        //anim.Play("1Pshuffling");
 
         yield return null;
-        AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
+        //AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
 
-        yield return new WaitForSeconds(info.length);
+        //yield return new WaitForSeconds(info.length);
 
         switch (pl1.state)
         {
@@ -60,17 +60,17 @@ public class PlayersStates : MonoBehaviour
                 status1p.sprite = img[4]; break;
         }
 
-        anim.Play("1PitemResult");
+        //anim.Play("1PitemResult");
     }
 
     private IEnumerator P2ItemVisual()
     {
-        anim.Play("2Pshuffling");
+        //anim.Play("2Pshuffling");
 
         yield return null;
-        AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
+        //AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
 
-        yield return new WaitForSeconds(info.length);
+        //yield return new WaitForSeconds(info.length);
 
         switch (pl2.state)
         {
@@ -86,6 +86,6 @@ public class PlayersStates : MonoBehaviour
                 status1p.sprite = img[4]; break;
         }
 
-        anim.Play("2PitemResult");
+        //anim.Play("2PitemResult");
     }
 }

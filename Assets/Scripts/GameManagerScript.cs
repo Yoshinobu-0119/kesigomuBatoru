@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    private Animator anim;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -14,7 +15,7 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         //--------------------------------------------------------------
-        //Important
+        //ëÂêÿ
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
