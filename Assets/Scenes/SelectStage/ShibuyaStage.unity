@@ -3065,6 +3065,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
   m_PrefabInstance: {fileID: 2416953052450920900}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1400270452 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5528183857050459078, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+  m_PrefabInstance: {fileID: 2416953052450920900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1428092568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4534,8 +4539,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296900087}
     - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: anim1
+      value: 
+      objectReference: {fileID: 1400270452}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: anim2
+      value: 
+      objectReference: {fileID: 1400270452}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1400270452}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
       propertyPath: img.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p1FlashColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p1FlashColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p2FlashColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p2FlashColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
       propertyPath: 'img.Array.data[0]'
@@ -4553,6 +4586,10 @@ PrefabInstance:
       propertyPath: 'img.Array.data[4]'
       value: 
       objectReference: {fileID: 21300000, guid: 76aed0767db2bc04bb0ce88344aabe17, type: 3}
+    - target: {fileID: 5528183857050459078, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
