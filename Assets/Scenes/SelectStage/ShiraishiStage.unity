@@ -5285,11 +5285,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894504012618463536, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8035378841959538869, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: time
-      value: 62
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8035378841959538869, guid: 9f8eb96132cf37641b4ddd164b15f124, type: 3}
       propertyPath: minutes

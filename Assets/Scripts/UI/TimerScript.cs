@@ -37,6 +37,7 @@ public class TimerScript : MonoBehaviour
     public int secondWarning;
     public int finalWarning;
 
+
     private void Awake()
     {
         resultPanel = GameObject.Find("ResultPanel");
@@ -83,10 +84,11 @@ public class TimerScript : MonoBehaviour
             updateTime = true;
         }
 
-        else if (Mathf.CeilToInt(time) == finalWarning)
+        if (updateTime == true)
         {
             StartCoroutine(TimeLeftReminder());
-            timerLeft.text = Mathf.CeilToInt(time).ToString();         
+            timerLeft.text = Mathf.CeilToInt(time).ToString();
+            updateTime = false;          
         }
     }
 
