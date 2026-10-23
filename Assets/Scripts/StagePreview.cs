@@ -19,7 +19,7 @@ public class StagePreview : MonoBehaviour
         oldImage.color = Color.white;
 
         newImage.type = Image.Type.Filled;
-        newImage.fillMethod = Image.FillMethod.Vertical;
+        newImage.fillMethod = Image.FillMethod.Horizontal;
         newImage.color = Color.white;
 
         // 
@@ -45,12 +45,12 @@ public class StagePreview : MonoBehaviour
         // 
         if (upward)
         {
-            newImage.fillOrigin = (int)Image.OriginVertical.Bottom;
+            newImage.fillOrigin = (int)Image.OriginHorizontal.Right;
         }
         // 
         else
         {
-            newImage.fillOrigin = (int)Image.OriginVertical.Top;
+            newImage.fillOrigin = (int)Image.OriginHorizontal.Left;
         }
 
         newImage.fillAmount = 0;

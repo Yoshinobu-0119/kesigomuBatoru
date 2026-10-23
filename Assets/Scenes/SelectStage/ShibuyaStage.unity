@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -544,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -10.11
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -552,7 +553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9
+      value: -4.81
       objectReference: {fileID: 0}
     - target: {fileID: 5529667426780865399, guid: 6f6881778408f604fa948fe8daded8fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -691,6 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -1716,6 +1718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -2410,6 +2413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -3059,6 +3063,11 @@ RectTransform:
 --- !u!224 &1400270451 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2374861099237110389, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+  m_PrefabInstance: {fileID: 2416953052450920900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1400270452 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5528183857050459078, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
   m_PrefabInstance: {fileID: 2416953052450920900}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1428092568
@@ -4165,6 +4174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 0
   canRespawn: 1
@@ -4272,6 +4282,10 @@ PrefabInstance:
       propertyPath: hitParticle
       value: 
       objectReference: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
+    - target: {fileID: 5695678685690054426, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 7761539336866364784, guid: 0a698d6ef1147fe47992571a7708ea15, type: 3}
     - target: {fileID: 7324468613422016877, guid: 9594fe8840bc91043bd02dfdc76edf69, type: 3}
       propertyPath: m_Name
       value: P1eraser
@@ -4352,6 +4366,10 @@ PrefabInstance:
       propertyPath: hitParticle
       value: 
       objectReference: {fileID: 5313493734770235378, guid: 6e1cb840cdef35042a8b72dd1462e178, type: 3}
+    - target: {fileID: 3106272961936981241, guid: f1619f8823040354ba19fca7eb0cb341, type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 7761539336866364784, guid: 0a698d6ef1147fe47992571a7708ea15, type: 3}
     - target: {fileID: 4699793965038968237, guid: f1619f8823040354ba19fca7eb0cb341, type: 3}
       propertyPath: imgHP
       value: 
@@ -4521,13 +4539,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296900087}
     - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: anim1
+      value: 
+      objectReference: {fileID: 1400270452}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: anim2
+      value: 
+      objectReference: {fileID: 1400270452}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1400270452}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
       propertyPath: img.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p1FlashColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p1FlashColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p2FlashColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: p2FlashColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: 'img.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: dd2552025cedef843ae21cb1ce610e24, type: 3}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: 'img.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: abd0dc0b36d561f4ba35fbdd00dc448f, type: 3}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: 'img.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: cd6ca9f1f26f4dc4b92a03a5c4c67cba, type: 3}
+    - target: {fileID: 4505875211816874496, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
       propertyPath: 'img.Array.data[4]'
       value: 
-      objectReference: {fileID: 21300000, guid: 008f273573674ae45a40c9ca1b3663a6, type: 3}
+      objectReference: {fileID: 21300000, guid: 76aed0767db2bc04bb0ce88344aabe17, type: 3}
+    - target: {fileID: 5528183857050459078, guid: f278cba6bc88a704898ac531c250deb1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

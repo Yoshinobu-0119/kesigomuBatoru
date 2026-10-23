@@ -1,12 +1,17 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.UI;
 public class ScoreReceiver : MonoBehaviour
 {
+    [SerializeField] EraserSpawner spawner;
     [SerializeField] Animator animator;
     [SerializeField] ParticleSystem particle;
+    [SerializeField] ParticleSystem particle2;
+    [SerializeField] AudioSource resultBGM;
+    [SerializeField] AudioSource winSE;
     [SerializeField] FadeController fadeController;
     [SerializeField] private int score1p;
     [SerializeField] private int score2p;
@@ -19,6 +24,11 @@ public class ScoreReceiver : MonoBehaviour
     [SerializeField] private TextMeshProUGUI counter1p;
     [SerializeField] private TextMeshProUGUI counter2p;
     [SerializeField] private GameObject CanvasResult;
+    [Space(10)]
+    [SerializeField] private Animator winnerTextAnimator;
+    [SerializeField] private GameObject[] winnerText1p;
+    [SerializeField] private GameObject[] winnerText2p;
+    [SerializeField] private GameObject[] winnerTextTie;
 
     [Header("Animation Settings")]
     [Tooltip("最初のダミー伸びの目標割合（0.1 = 10%）")]
@@ -47,6 +57,8 @@ public class ScoreReceiver : MonoBehaviour
         if (counter1p != null) counter1p.text = "0";
         if (counter2p != null) counter2p.text = "0";
 
+        SetDisplayText();
+
         // 3. アニメーション演出開始
         StartCoroutine(AnimateScoreRoutine());
     }
@@ -64,8 +76,8 @@ public class ScoreReceiver : MonoBehaviour
         if (ScoreManager.Instance == null) score1p = 100;
         if (ScoreManager.Instance == null) score2p = 100;
         if (ScoreManager.Instance == null) scoreTotal = 200;
-            score1p = ScoreManager.Instance.player1Score;
-            score2p = ScoreManager.Instance.player2Score;
+        score1p = ScoreManager.Instance.player1Score;
+        score2p = ScoreManager.Instance.player2Score;
         scoreTotal = score1p + score2p;
     }
 
@@ -79,7 +91,7 @@ public class ScoreReceiver : MonoBehaviour
         // --------------------------------------------------
         float elapsed = 0f;
 
-        int initialDummyScore = Mathf.RoundToInt(Mathf.Max(score1p,score2p) * initialFillAmount);
+        int initialDummyScore = Mathf.RoundToInt(Mathf.Max(score1p, score2p) * initialFillAmount);
 
         while (elapsed < initialDuration)
         {
@@ -141,10 +153,22 @@ public class ScoreReceiver : MonoBehaviour
         if (counter1p != null) counter1p.text = score1p.ToString();
         if (counter2p != null) counter2p.text = score2p.ToString();
 
+
+        winnerTextAnimator.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+
         PlayAnimTrigger("StartAnim");
         yield return new WaitForSeconds(0.5f);
+        winSE.Play();
         particle.Play();
+        particle2.Play();
         canRestart = true;
+        if (spawner)
+        {
+            spawner.SpawnErasers(score1p, score2p, 0.5f);
+        }
+        yield return new WaitForSeconds(2.5f);
+        resultBGM.Play();
     }
 
     public void PlayAnimTrigger(string AnimName)
@@ -154,8 +178,28 @@ public class ScoreReceiver : MonoBehaviour
 
     private IEnumerator ShowResultMenu()
     {
-        yield return new WaitForSeconds (1f);
+        yield return new WaitForSeconds(1f);
 
         CanvasResult.SetActive(true);
+    }
+
+    private void SetAllActive(GameObject[] objects, bool active)
+    {
+        if (objects == null) return;
+        for (int i = 0; i < objects.Length; i++)
+        {
+            objects[i].SetActive(active);
+        }
+    }
+
+    private void SetDisplayText()
+    {
+        SetAllActive(winnerText1p, false);
+        SetAllActive(winnerText2p, false);
+        SetAllActive(winnerTextTie, false);
+
+        if (score1p == score2p)     SetAllActive(winnerTextTie, true);
+        else if (score1p > score2p) SetAllActive(winnerText1p, true);
+        else                        SetAllActive(winnerText2p, true);
     }
 }
