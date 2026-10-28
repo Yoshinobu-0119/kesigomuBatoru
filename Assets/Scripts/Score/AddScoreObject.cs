@@ -26,7 +26,8 @@ public class AddScoreObject : MonoBehaviour
     public int itemScore;
     [SerializeField] bool is1p;
     [SerializeField] bool is2p;
-
+    public bool cantChangeLayer;
+    public bool mainPlayer;
     private void Start()
     {
         //インスタンス化したスコアマネージャーを参照
@@ -76,21 +77,25 @@ public class AddScoreObject : MonoBehaviour
     {
         if (other.gameObject.name == "void")
         {
-            if (deathParticle)
-            {
-                GameObject particle = Instantiate(deathParticle, transform.position, hitParticle.transform.rotation);
-            }
+            
 
             if (this.isPlayer1p)
             {
                 is1p = false;
                 is2p = true;
+                
             }
 
             if (this.isPlayer2p)
             {
                 is1p = true;
                 is2p = false;
+                
+            }
+
+            if (deathParticle)
+            {
+                GameObject particle = Instantiate(deathParticle, transform.position, hitParticle.transform.rotation);
             }
 
             scoreManager.AddScore(is1p, is2p, itemScore);
@@ -98,7 +103,12 @@ public class AddScoreObject : MonoBehaviour
             if (canRespawn)
             {
                 Respawn();
+                if (!mainPlayer)
+                {
+                    SetLayerColor(gameObject, LayerMask.NameToLayer("NeutralShader"));
+                }
             }
+
             scoreManager.UpdateScore();
         }
     }
@@ -137,6 +147,26 @@ public class AddScoreObject : MonoBehaviour
                     other.is1p = false;
                 }
             }
+
+            if(!cantChangeLayer)
+            {
+                if (is1p) { SetLayerColor(gameObject, LayerMask.NameToLayer("Player2Shader")); }
+
+                if (is2p) { SetLayerColor(gameObject, LayerMask.NameToLayer("Player1Shader")); }
+            }
         }
     }
+
+    //change layer
+    void SetLayerColor(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+
+        foreach(Transform child in obj.transform)
+        {
+            SetLayerColor(child.gameObject, layer);
+        }
+    }
+
 }
+

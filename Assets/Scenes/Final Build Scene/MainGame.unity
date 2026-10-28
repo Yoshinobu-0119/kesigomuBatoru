@@ -291,6 +291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8416290766923492735, guid: 1875dd7f4ef5573469804f39344e89d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -344,6 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 1
   isPlayer2p: 0
   canRespawn: 1
@@ -354,6 +360,9 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
+  cantChangeLayer: 0
+  mainPlayer: 0
 --- !u!114 &457089888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +406,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
+  scoreManager: {fileID: 0}
   state: 0
+  meshRenderer: {fileID: 0}
+  normalCoverPalette: {fileID: 0}
+  normalRubberPalette: {fileID: 0}
+  scoreUpPalette: {fileID: 0}
+  speedUpPalette: {fileID: 0}
+  debuffPalette: {fileID: 0}
+  bigUpPalette: {fileID: 0}
 --- !u!54 &457089891
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1769,7 +1786,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
+  scoreManager: {fileID: 0}
   state: 0
+  meshRenderer: {fileID: 0}
+  normalCoverPalette: {fileID: 0}
+  normalRubberPalette: {fileID: 0}
+  scoreUpPalette: {fileID: 0}
+  speedUpPalette: {fileID: 0}
+  debuffPalette: {fileID: 0}
+  bigUpPalette: {fileID: 0}
 --- !u!114 &1296900088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,6 +1807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35344873c3126c242b4a1fbecfc27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
   isPlayer1p: 0
   isPlayer2p: 1
   canRespawn: 1
@@ -1792,6 +1819,9 @@ MonoBehaviour:
   randomRangeMax: {x: 0, y: 0, z: 0}
   itemScore: 5
   is1p: 0
+  is2p: 0
+  cantChangeLayer: 0
+  mainPlayer: 0
 --- !u!114 &1296900089
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,8 +35,10 @@ public class TimerScript : MonoBehaviour
     [Header("Žc‚èŽžŠÔ‚Ì•\Ž¦")]
     public int firstWarning;
     public int secondWarning;
-    public int finalWarning;
-
+    public int thirdWarning;
+    public int threeWarning;
+    public int twoWarning;
+    public int oneWarning;
 
     private void Awake()
     {
@@ -80,6 +82,26 @@ public class TimerScript : MonoBehaviour
         }
 
         else if (Mathf.CeilToInt(time) == secondWarning)
+        {
+            updateTime = true;
+        }
+
+        else if (Mathf.CeilToInt(time) == thirdWarning)
+        {
+            updateTime = true;
+        }
+
+        else if (Mathf.CeilToInt(time) == threeWarning)
+        {
+            updateTime = true;
+        }
+
+        else if (Mathf.CeilToInt(time) == twoWarning)
+        {
+            updateTime = true;
+        }
+
+        else if (Mathf.CeilToInt(time) == oneWarning)
         {
             updateTime = true;
         }
