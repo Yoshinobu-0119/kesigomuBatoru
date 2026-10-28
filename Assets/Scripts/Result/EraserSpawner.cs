@@ -3,11 +3,22 @@ using UnityEngine;
 
 public class EraserSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject redEraser;
-    [SerializeField] GameObject blueEraser;
+    [SerializeField] private GameObject redEraser;
+    [SerializeField] private GameObject blueEraser;
 
-    [SerializeField] Vector3 spawnRangeMin;
-    [SerializeField] Vector3 spawnRangeMax;
+    // 大きい消しゴム用プレハブ（未設定の場合は通常の消しゴムを拡大して生成します）
+    [SerializeField] private GameObject bigRedEraser;
+    [SerializeField] private GameObject bigBlueEraser;
+
+    // ターゲットの参照
+    [SerializeField] private Transform targetR;
+    [SerializeField] private Transform targetB;
+
+    // ターゲットの上空何メートルの位置から落とすか
+    [SerializeField] private float dropHeight = 5.0f;
+
+    [SerializeField] private Vector3 spawnRangeMin;
+    [SerializeField] private Vector3 spawnRangeMax;
 
     // 出現させる回数（インスペクターから指定可能）
     [SerializeField] private int spawnCount = 10;
@@ -20,22 +31,40 @@ public class EraserSpawner : MonoBehaviour
 
     public void SpawnErasers(int score1p, int score2p, float sec)
     {
+        // 全体の生成シーケンスを開始
+        StartCoroutine(SpawnSequence(score1p, score2p, sec));
+    }
+
+    // デカ消しゴム落下から出現処理までの一連のフローを管理するコルーチン
+    private IEnumerator SpawnSequence(int score1p, int score2p, float sec)
+    {
         if (score1p > score2p)
         {
-            // 1Pスコア優勢：redをsec間隔でspawnCount回生成
-            StartCoroutine(SpawnRoutine(redEraser, spawnCount, sec));
+            // 1. 先に相手(2P/Blue)のTargetBの上空から大きい赤消しゴムを落とす
+            GameObject eraserPrefab = bigRedEraser != null ? bigRedEraser : redEraser;
+            DropBigEraser(eraserPrefab, targetB);
+
+            // 2. その後、redをsec間隔で指定回数ランダム生成する
+            yield return StartCoroutine(SpawnRoutine(redEraser, spawnCount, sec));
         }
         else if (score1p < score2p)
         {
-            // 2Pスコア優勢：blueをsec間隔でspawnCount回生成
-            StartCoroutine(SpawnRoutine(blueEraser, spawnCount, sec));
+            // 1. 先に相手(1P/Red)のTargetRの上空から大きい青消しゴムを落とす
+            GameObject eraserPrefab = bigBlueEraser != null ? bigBlueEraser : blueEraser;
+            DropBigEraser(eraserPrefab, targetR);
+
+            // 2. その後、blueをsec間隔で指定回数ランダム生成する
+            yield return StartCoroutine(SpawnRoutine(blueEraser, spawnCount, sec));
         }
         else
         {
-            // 同点：redとblueを半数ずつsec間隔で生成
+            // 同点：redとblueを半数ずつ並列で生成（デカ消しゴムは落とさない）
             int halfCount = Mathf.Max(1, spawnCount / 2);
-            StartCoroutine(SpawnRoutine(redEraser, halfCount, sec));
-            StartCoroutine(SpawnRoutine(blueEraser, halfCount, sec));
+            Coroutine coroutineR = StartCoroutine(SpawnRoutine(redEraser, halfCount, sec));
+            Coroutine coroutineB = StartCoroutine(SpawnRoutine(blueEraser, halfCount, sec));
+
+            yield return coroutineR;
+            yield return coroutineB;
         }
     }
 
@@ -65,6 +94,29 @@ public class EraserSpawner : MonoBehaviour
 
             // sec秒待機
             yield return new WaitForSeconds(sec);
+        }
+    }
+
+    // ターゲットの上空から大きい消しゴムを落とす処理
+    private void DropBigEraser(GameObject prefab, Transform target)
+    {
+        if (prefab == null || target == null) return;
+
+        // ターゲットの位置に高さオフセット（dropHeight）を加算した位置
+        Vector3 dropPosition = target.position + Vector3.up * dropHeight;
+
+        Quaternion randomRotation = Quaternion.Euler(
+            Random.Range(0f, 360f),
+            Random.Range(0f, 360f),
+            Random.Range(0f, 360f)
+        );
+
+        GameObject spawnedEraser = Instantiate(prefab, dropPosition, randomRotation);
+
+        // 専用の大きい消しゴムプレハブがセットされていない場合は、通常の消しゴムを2倍サイズにして生成
+        if (prefab == redEraser || prefab == blueEraser)
+        {
+            spawnedEraser.transform.localScale *= 2.0f;
         }
     }
 }
