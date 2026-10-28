@@ -644,7 +644,7 @@ MonoBehaviour:
   canCountDown: 0
   frontText: {fileID: 3070538506782520801}
   backText: {fileID: 1865835308783399935}
-  timerRemainingAnimationLength: 2
+  timerRemainingAnimationLength: 3
   time: 120
   resultPanel: {fileID: 0}
   finishDisplay: {fileID: 481624853002330405}
@@ -652,7 +652,10 @@ MonoBehaviour:
   timerLeft: {fileID: 735216959600539245}
   firstWarning: 60
   secondWarning: 30
-  finalWarning: 10
+  thirdWarning: 10
+  threeWarning: 3
+  twoWarning: 2
+  oneWarning: 1
 --- !u!1 &2544070118953348975
 GameObject:
   m_ObjectHideFlags: 0

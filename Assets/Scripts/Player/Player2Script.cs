@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+ 
 public class Player2Script : MonoBehaviour
 {
     int PlayerID = 2;
@@ -26,7 +26,7 @@ public class Player2Script : MonoBehaviour
     Vector3 defaultscale;
 
     public enum PlayerState
-    { 
+    {
         None,
         ScoreUP,
         SpeedUP,
@@ -35,6 +35,19 @@ public class Player2Script : MonoBehaviour
     }
 
     public PlayerState state = PlayerState.None;
+
+    [Header("Model's specific part")]
+    [SerializeField] private MeshRenderer meshRenderer;
+    private int modelCover = 0;
+    private int modelEraser = 1;
+
+    [Header("Palettes")]
+    [SerializeField] private Material normalCoverPalette;
+    [SerializeField] private Material normalRubberPalette;
+    [SerializeField] private Material scoreUpPalette;
+    [SerializeField] private Material speedUpPalette;
+    [SerializeField] private Material debuffPalette;
+    [SerializeField] private Material bigUpPalette;
 
     void Start()
     {
@@ -111,6 +124,35 @@ public class Player2Script : MonoBehaviour
         }
     }
 
+    private void changePalette(PlayerState playerState)
+    {
+        Material[] palette = meshRenderer.materials;
+        switch (playerState)
+        {
+            case PlayerState.None:
+                palette[modelCover] = normalCoverPalette;
+                palette[modelEraser] = normalRubberPalette;
+                break;
+
+            case PlayerState.ScoreUP:
+                palette[modelCover] = scoreUpPalette;
+                break;
+
+            case PlayerState.SpeedUP:
+                palette[modelCover] = speedUpPalette;
+                break;
+
+            case PlayerState.Debuff:
+                palette[modelEraser] = debuffPalette;
+                break;
+
+            case PlayerState.BigUp:
+                palette[modelCover] = bigUpPalette;
+                break;
+        }
+        meshRenderer.materials = palette;
+    }
+
     //状態異常の追加について
 
     //自分の速度を上げる（スピードアップ）
@@ -122,10 +164,12 @@ public class Player2Script : MonoBehaviour
     private IEnumerator SpeedBoostRoutine(float duration, float multiplier)
     {
         state = PlayerState.SpeedUP;
+        changePalette(PlayerState.SpeedUP);
         speedMultiplier = multiplier; // 速度を○倍にする
         yield return new WaitForSeconds(duration); // duration秒待つ
         speedMultiplier = 1f; // 元に戻す
         state = PlayerState.None;
+        changePalette(PlayerState.None);
         Debug.Log("2pスピード戻る");
     }
 
@@ -139,10 +183,12 @@ public class Player2Script : MonoBehaviour
     private IEnumerator ReverseControlsRoutine(float duration)
     {
         state = PlayerState.Debuff;
+        changePalette(PlayerState.Debuff);
         isReversed = true; // 反転フラグをON
         yield return new WaitForSeconds(duration); // duration秒待つ
         isReversed = false; // 元に戻す
         state = PlayerState.None;
+        changePalette(PlayerState.None);
         Debug.Log("2p反転戻る");
     }
 
@@ -154,8 +200,10 @@ public class Player2Script : MonoBehaviour
     private IEnumerator StateRoutine(float duration)
     {
         state = PlayerState.ScoreUP;
+        changePalette(PlayerState.ScoreUP);
         yield return new WaitForSeconds(duration); // duration秒待つ
         state = PlayerState.None;
+        changePalette(PlayerState.None);
         Debug.Log("2pのスコアアップ終わり");
     }
 
@@ -167,14 +215,16 @@ public class Player2Script : MonoBehaviour
     private IEnumerator StateRoutineBig(float duration, float multiplier)
     {
         state = PlayerState.BigUp;
+        changePalette(PlayerState.BigUp);
         this.transform.localScale = transform.localScale * 2.5f;
-        rb.mass = 2f;
+        rb.mass = 3f;
         speedMultiplier = multiplier; // 速度を○倍にする
         yield return new WaitForSeconds(duration); // duration秒待つ
         this.transform.localScale = defaultscale;
         rb.mass = rb_defaultmass;
         speedMultiplier = 1f; // 元に戻す
         state = PlayerState.None;
+        changePalette(PlayerState.None);
         Debug.Log("縮んじゃった");
     }
 
@@ -184,7 +234,7 @@ public class Player2Script : MonoBehaviour
     {
         if (other.CompareTag("ItemBox"))
         {
-            if(state == PlayerState.None)
+            if (state == PlayerState.None)
             {
                 int maxRandom = (scoreManager.player1Score > scoreManager.player2Score) ? 4 : 3;
                 int randomValue = UnityEngine.Random.Range(0, maxRandom); // 0, 1, 2 のいずれか

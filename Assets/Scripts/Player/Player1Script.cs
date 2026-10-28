@@ -35,6 +35,20 @@ public class Player1Script : MonoBehaviour
     }
 
     public PlayerState state = PlayerState.None;
+
+    [Header("Model's specific part")]
+    [SerializeField] private MeshRenderer meshRenderer;
+    private int modelCover = 0;
+    private int modelEraser = 1;
+
+    [Header("Palettes")]
+    [SerializeField] private Material normalCoverPalette;
+    [SerializeField] private Material normalRubberPalette;
+    [SerializeField] private Material scoreUpPalette;
+    [SerializeField] private Material speedUpPalette;
+    [SerializeField] private Material debuffPalette;
+    [SerializeField] private Material bigUpPalette;
+
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -112,6 +126,36 @@ public class Player1Script : MonoBehaviour
         }
     }
 
+    private void changePalette(PlayerState playerState)
+    {
+        Material[] palette = meshRenderer.materials;
+        switch (playerState)
+        {
+            case PlayerState.None:
+                palette[modelCover] = normalCoverPalette;
+                break;
+
+            case PlayerState.ScoreUP:
+                palette[modelCover] = scoreUpPalette;
+                break;
+
+            case PlayerState.SpeedUP:
+                palette[modelCover] = speedUpPalette;
+                break;
+
+            case PlayerState.Debuff:
+                palette[modelEraser] = debuffPalette;
+
+                break;
+
+            case PlayerState.BigUp:
+                palette[modelCover] = bigUpPalette;
+                break;
+
+        }
+        meshRenderer.materials = palette;
+    }
+
     //状態異常の追加について
 
     //自分の速度を上げる（スピードアップ）
@@ -123,10 +167,12 @@ public class Player1Script : MonoBehaviour
     private IEnumerator SpeedBoostRoutine(float duration, float multiplier)
     {
         state = PlayerState.SpeedUP;
+        changePalette(PlayerState.SpeedUP);
         speedMultiplier = multiplier; // 速度を○倍にする
         yield return new WaitForSeconds(duration); // duration秒待つ
         speedMultiplier = 1f; // 元に戻す
         state = PlayerState.None;
+        changePalette(PlayerState.None);
         Debug.Log("1pスピードもドル");
 
     }
@@ -156,8 +202,10 @@ public class Player1Script : MonoBehaviour
     private IEnumerator StateRoutine(float duration)
     {
         state = PlayerState.ScoreUP;
+        changePalette(PlayerState.ScoreUP);
         yield return new WaitForSeconds(duration); // duration秒待つ
         state = PlayerState.None;
+        changePalette(PlayerState.None);
         Debug.Log("1pのスコアアップ終わり");
     }
 
@@ -169,14 +217,16 @@ public class Player1Script : MonoBehaviour
     private IEnumerator StateRoutineBig(float duration, float multiplier)
     {
         state = PlayerState.BigUp;
+        changePalette(PlayerState.BigUp);
         this.transform.localScale = transform.localScale * 2.5f;
-        rb.mass = 2f;
+        rb.mass = 4f;
         speedMultiplier = multiplier; // 速度を○倍にする
         yield return new WaitForSeconds(duration); // duration秒待つ
         this.transform.localScale = defaultscale;
         rb.mass = rb_defaultmass;
         speedMultiplier = 1f; // 元に戻す
         state = PlayerState.None;
+        changePalette(PlayerState.None);
         Debug.Log("縮んじゃった");
     }
 
@@ -202,7 +252,6 @@ public class Player1Script : MonoBehaviour
                     case 1:
                         {
                             Debug.Log("2p相手反転");
-
                             GameObject pl2 = GameObject.FindGameObjectWithTag("Player2");
                             Player2Script state = pl2.GetComponent<Player2Script>();
 
@@ -218,7 +267,7 @@ public class Player1Script : MonoBehaviour
                         break;
                     case 3:
                         Debug.Log("1pのがBIGになっちゃった");
-                        ActivateBig(8.0f,2.0f);
+                        ActivateBig(8.0f, 2.0f);
                         break;
 
                 }
