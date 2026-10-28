@@ -61,13 +61,13 @@ public class StopManager : MonoBehaviour
         {
             if (h > 0.5f)
             {
-                //index = 1;
+                index = 1;
                 UpdateButton();
                 stick = true;
             }
             else if (h < -0.5f)
             {
-                //index = 0;
+                index = 0;
                 UpdateButton();
                 stick = true;
             }
@@ -103,7 +103,7 @@ public class StopManager : MonoBehaviour
         CurrentState = GameState.Paused;
         Debug.Log("ƒ|[ƒY’†");
 
-        //index = 0;
+        index = 0;
         UpdateButton();
     }
 
@@ -120,13 +120,13 @@ public class StopManager : MonoBehaviour
     {
         if (index == 0)
         {
-            //resume.transform.localScale = Vector3.one * 1.15f;
-            //title.transform.localScale = Vector3.one;
+            resume.transform.localScale = Vector3.one * 1.15f;
+            title.transform.localScale = Vector3.one;
         }
         else
         {
-           // resume.transform.localScale = Vector3.one;
-            //title.transform.localScale = Vector3.one * 1.15f;
+             resume.transform.localScale = Vector3.one;
+            title.transform.localScale = Vector3.one * 1.15f;
         }
     }
 
