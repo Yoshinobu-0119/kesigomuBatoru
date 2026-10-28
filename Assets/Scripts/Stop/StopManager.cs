@@ -11,13 +11,13 @@ public class StopManager : MonoBehaviour
     public string titleScene;
 
     TimerScript ts;
-    //ƒQ[ƒ€‚Ìó‘Ô
+    //ã‚²ãƒ¼ãƒ ã®çŠ¶æ…‹æ™‚
     public enum GameState
     {
-        Opening,    // ŠJn‰‰o’†
-        Gameplay,   // ’ÊíƒvƒŒƒC’†
-        Paused,     // ƒ|[ƒY’†
-        GameOver    // ƒQ[ƒ€I—¹iƒQ[ƒ€ƒI[ƒo[/ƒNƒŠƒAj
+        Opening,    // é–‹å§‹æ¼”å‡ºä¸­
+        Gameplay,   // é€šå¸¸ãƒ—ãƒ¬ã‚¤ä¸­
+        Paused,     // ãƒãƒ¼ã‚ºä¸­
+        GameOver    // ã‚²ãƒ¼ãƒ çµ‚äº†ï¼ˆã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼/ã‚¯ãƒªã‚¢ï¼‰
     }
     public static GameState CurrentState { get; private set; } = GameState.Gameplay;
 
@@ -30,7 +30,7 @@ public class StopManager : MonoBehaviour
         Time.timeScale = 1f;
         isPause = false;
         PausePanel.SetActive(false);
-        //ƒQ[ƒ€‚Ìó‘Ô
+        //ã‚²ãƒ¼ãƒ ã®çŠ¶æ…‹
         CurrentState = GameState.Opening;
 
         ts = GameObject.FindFirstObjectByType<TimerScript>();
@@ -99,9 +99,9 @@ public class StopManager : MonoBehaviour
 
         PausePanel.SetActive(true);
 
-        //ƒQ[ƒ€‚Ìó‘Ô
+        //ã‚²ãƒ¼ãƒ ã®çŠ¶æ…‹
         CurrentState = GameState.Paused;
-        Debug.Log("ƒ|[ƒY’†");
+        Debug.Log("ãƒãƒ¼ã‚ºä¸­");
 
         index = 0;
         UpdateButton();
@@ -113,7 +113,7 @@ public class StopManager : MonoBehaviour
         Time.timeScale = 1f;
         PausePanel.SetActive(false);
 
-        //ƒQ[ƒ€‚Ìó‘Ô
+        //ã‚²ãƒ¼ãƒ ã®çŠ¶æ…‹
         CurrentState = GameState.Gameplay;
     }
     void UpdateButton()
@@ -125,21 +125,21 @@ public class StopManager : MonoBehaviour
         }
         else
         {
-             resume.transform.localScale = Vector3.one;
+            resume.transform.localScale = Vector3.one;
             title.transform.localScale = Vector3.one * 1.15f;
         }
     }
 
     public void StartGame()
     {
-        //ƒQ[ƒ€‚Ìó‘Ô
+        //ã‚²ãƒ¼ãƒ ã®çŠ¶æ…‹
         CurrentState = GameState.Gameplay;
         Debug.Log("Start");
     }
 
     public void EndGame()
     {
-        //ƒQ[ƒ€‚Ìó‘Ô
+        //ã‚²ãƒ¼ãƒ ã®çŠ¶æ…‹
         CurrentState = GameState.GameOver;
     }
 
